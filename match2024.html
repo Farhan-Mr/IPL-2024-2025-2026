@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match 2024 - SRH vs KKR Summary</title>
+    <style>
+        /* Reusing your established styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: #f0f2f5; color: #333; }
+        header { background-color: #223577; color: white; }
+        .top-bar { padding: 10px 20px; font-size: 0.9rem; background-color: rgba(0,0,0,0.1); display: flex; align-items: center; }
+        .main-nav { width: 70vw; margin: auto; display: flex; justify-content: space-around; padding: 15px 0; }
+        .main-nav a { color: #adb5bd; text-decoration: none; font-weight: bold; font-size: 0.9rem; cursor: pointer; }
+        .main-nav a.active { color: white; border-bottom: 3px solid white; padding-bottom: 5px; }
+        .container { max-width: 650px; margin: 20px auto; padding: 0 15px; }
+        .match-card { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); padding: 16px; }
+        .match-date { font-size: 14px; color: #70757a; margin-bottom: 12px; }
+        .tabs { display: flex; gap: 30px; border-bottom: 1px solid #e8eaed; margin-bottom: 20px; padding-bottom: 8px; }
+        .tab { font-size: 13px; font-weight: bold; color: #70757a; text-transform: uppercase; }
+        .tab.active { color: #1a73e8; border-bottom: 3px solid #1a73e8; margin-bottom: -11px; }
+        .score-row { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }
+        .team-info { text-align: center; width: 80px; }
+        .team-logo { width: 50px; height: 45px; margin-bottom: 8px; }
+        .team-name { font-size: 1.0rem; }
+        .score-block { text-align: center; }
+        .score-main { font-size: 20px; font-weight: 350; color: #202124; }
+        .overs { font-size: 14px; color: #70757a; }
+        .match-result { text-align: center; margin: 15px 0; }
+        .winner-text { font-size: 15px; font-weight: 400; }
+        .match-meta { font-size: 14px; color: #70757a; margin-top: 5px; }
+        .award-box { border-radius: 8px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; color: white; }
+        .award-tournament { background-color: #391f5c; } /* Purple for KKR theme */
+
+        .award-match { background-color: #391f5c; } 
+        .award-label { font-size: 12px; text-transform: uppercase; opacity: 0.9; }
+        .player-name { font-size: 16px; font-weight: 450; margin-top: 4px; }
+        
+        .innings-divider { text-align: center; font-size: 13px; color: #70757a; margin: 25px 0 15px; display: flex; align-items: center; }
+        .innings-divider::before, .innings-divider::after { content: ""; flex: 1; border-bottom: 1px solid #e8eaed; margin: 0 15px; }
+        .stat-line { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f1f3f4; font-size: 14px; }
+        .player-stat { display: flex; align-items: center; gap: 10px; }
+        .mini-avatar { width: 32px; height: 32px; border-radius: 50%; background: #eee; }
+        .text-right { flex-direction: row-reverse; text-align: right; }
+        .footer-details { margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee; font-size: 14px; line-height: 1.8; }
+        .footer-details span { color: #188038; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <span style="width: 50px; height: 50px;"><img style="width: 50px; height: 50px;" src="https://crystalpng.com/wp-content/uploads/2025/09/ipl-logo.png" alt=""></span>
+            <span style="margin-left: 15px; font-weight: bold; font-size: 0.9rem;">Indian Premier League</span>
+        </div>
+        <nav class="main-nav">
+            <a href="match2024.html">MATCHES</a>
+            <a href="ipl2024.html">TABLE</a>
+            <a href="players.html">PLAYERS</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="match-card">
+            <div class="match-date">IPL • 28 May 24</div>
+
+            <div class="tabs">
+                <a class="tab active">Summary</a>
+                <a class="tab">Scorecard</a>
+                <a class="tab">Commentary</a>
+            </div>
+
+            <div class="score-row">
+                <div class="team-info">
+                    <img class="team-logo" src="https://logowik.com/content/uploads/images/sunrisers-hyderabad5129.jpg" alt="SRH">
+                    <div class="team-name">SRH</div>
+                </div>
+                <div class="score-block">
+                    <div class="score-main">113</div>
+                    <div class="overs">(18.3)</div>
+                </div>
+                <div class="score-block">
+                    <div class="score-main">114/2</div>
+                    <div class="overs">(10.3)</div>
+                </div>
+                <div class="team-info">
+                    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/1200px-Kolkata_Knight_Riders_Logo.svg.png" alt="KKR">
+                    <div class="team-name">KKR</div>
+                </div>
+            </div>
+
+            <div class="match-result">
+                <div class="winner-text">KKR won by 8 wickets (57 balls left)</div>
+                <div class="match-meta">Final • T20 74 of 72</div>
+            </div>
+
+            <div class="award-box award-tournament">
+                <div>
+                    <div class="award-label">Player of the Tournament</div>
+                    <div class="player-name">Sunil Narine (KKR)</div>
+                </div>
+            </div>
+
+            <div class="award-box award-match">
+                <div>
+                    <div class="award-label">Player of the Match</div>
+                    <div class="player-name">Mitchell Starc (KKR) • 2/14 (3)</div>
+                </div>
+            </div>
+
+            <div class="innings-divider">Sunrisers • 113 (18.3)</div>
+            <div class="stat-line">
+                <div class="player-stat"><div class="mini-avatar"></div> Pat Cummins 24 (19)</div>
+                <div class="player-stat text-right"><div class="mini-avatar"></div> Andre Russell 3/19 (2.3)</div>
+
+            </div>
+
+            <div class="stat-line">
+                <div class="player-stat"><div class="mini-avatar"></div> Aiden Markram 20 (23)</div>
+                <div class="player-stat text-right"><div class="mini-avatar"></div> Mitchell Starc 2/14 (3)</div>
+
+            </div>
+
+            <div class="stat-line">
+                <div class="player-stat"><div class="mini-avatar"></div> Heinrich Klaasen 16 (17)</div>
+                <div class="player-stat text-right"><div class="mini-avatar"></div> Harshit Rana 2/24 (4)</div>
+
+            </div>
+
+
+
+
+            <div class="innings-divider">Knight Riders • 114/2 (10.3)</div>
+            <div class="stat-line">
+                <div class="player-stat"><div class="mini-avatar"></div> Venkatesh Iyer 52* (26)</div>
+                <div class="player-stat text-right"><div class="mini-avatar"></div> Pat Cummins 1/18 (2)</div>
+            </div>
+
+            <div class="stat-line">
+                <div class="player-stat"><div class="mini-avatar"></div> Rahmanullah Gurbaz 39 (32)</div>
+                <div class="player-stat text-right"><div class="mini-avatar"></div> Shahbaz Ahmad 1/22 (2.3)</div>
+            </div>
+
+            <div class="stat-line">
+                <div class="player-stat"><div class="mini-avatar"></div> Sunil Narine 6 (2)</div>
+                <div class="player-stat text-right"><div class="mini-avatar"></div> Aiden Markram 0/5 (1)</div>
+            </div>
+
+            <div class="footer-details">
+                <div><span>Toss:</span> SRH won the toss and decided to bat</div>
+                <div><span>Venue:</span> MA Chidambaram Stadium, Chennai</div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

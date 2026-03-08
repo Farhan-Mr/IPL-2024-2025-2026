@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Matches 2026</title>
+    <link rel="stylesheet" href="ipl_table.css">
+
+    <style>
+  .toolbar-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-bottom: 1px solid #dcdcdc;
+    font-family: sans-serif;
+  }
+
+  .dropdown {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .download-btn {
+    margin-left: auto;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+  }
+
+  .no-fixtures {
+    text-align: center;
+    padding: 40px;
+    color: #555;
+    font-size: 16px;
+  }
+</style>
+
+</head>
+<body>
+
+    <header>
+        <div class="top-bar" style="display: flex; align-items: center; justify-content: start;">
+            <span style="width: 50px; height: 50px;"><img style="width: 50px; height: 50px;" src="/-My_Portfolio//IPL Points Table/img/ipl-logo.png" alt=""></span>
+            <span style="margin-left: 15px; font-weight: bold; font-size: 0.9rem; ">Indian Premier League</span>
+        </div>
+        <nav class="main-nav">
+            <a href="matches2026.html" style="color: white;" >MATCHES</a>
+            <a class="active" href="ipl_Table2026.html">TABLE</a>
+            <a >STATS</a>
+            <a href="players.html">PLAYERS</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="filter-section">
+            <label for="year-select">Season</label>
+            <select id="year-select" onchange="if(this.value) window.location.href=this.value;">
+                <option value="ipl_Table2026.html" selected>2026</option>
+                <option value="ipl_table.html">2025</option>
+                <option value="ipl2024.html">2024</option>
+            </select>
+        </section>
+
+
+        <div class="toolbar-container">
+    <div class="dropdown">ALL TEAMS ▼</div>
+    <div class="dropdown">ALL VENUES ▼</div>
+    <div class="dropdown">SEASON 2026</div>
+
+  
+  <button class="download-btn">
+    Download <span>&#x2B07;</span>
+  </button>
+</div>
+
+<div class="no-fixtures">
+  No fixtures <br> Currently Not Avaliable
+</div>
+    </main>
+
+</body>
+</html>
