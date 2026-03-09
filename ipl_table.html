@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pepsi IPL Points Table 2026</title>
 
-<!-- Main Theme CSS -->
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -24,12 +23,14 @@
   padding: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   animation: fadeIn 0.8s ease-out both;
+  overflow-x: auto; /* responsive scroll */
 }
 
 .ipl-table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
+  min-width: 700px; /* ensures scroll on small screens */
 }
 
 .ipl-table th, .ipl-table td {
@@ -94,18 +95,64 @@
     color: white;
 }
 
-/* TABLE */
-.table-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    background: #222;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+/* ----------------- RESPONSIVE ----------------- */
+@media(max-width:1024px){
+  header {
+    flex-wrap: wrap;
+  }
+  .table-container {
+    padding: 15px;
+  }
 }
 
-@media(max-width:600px){
-  .hide-mobile { display:none; }
+@media(max-width:768px){
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #1f2245;
+    flex-direction: column;
+    display: none;
+    padding: 15px;
+    z-index: 10;
+  }
+  nav.show {
+    display: flex;
+  }
+  nav a {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .hamburger {
+    display: block;
+  }
+  .filter-section {
+    width: 90%;
+    text-align: center;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  .ipl-table {
+    min-width: 700px;
+  }
+}
+
+@media(max-width:480px){
+  .logo img {
+    width: 35px;
+  }
+  nav a {
+    font-size: 14px;
+  }
+  .filter-section {
+    font-size: 14px;
+  }
 }
 </style>
 </head>
@@ -131,16 +178,14 @@
   <button id="themeToggle">🌙</button>
 </header>
 
-
-
 <section class="filter-section">
-        <label for="year-select">Season</label>
-        <select id="year-select" onchange="if(this.value) window.location.href=this.value;">
-            <option value="ipl_Table2026.html" >2026</option>
-            <option value="ipl_table.html"selected >2025</option>
-            <option value="ipl2024.html">2024</option>
-        </select>
-    </section>
+  <label for="year-select">Season</label>
+  <select id="year-select" onchange="if(this.value) window.location.href=this.value;">
+      <option value="ipl_Table2026.html" >2026</option>
+      <option value="ipl_table.html" selected>2025</option>
+      <option value="ipl2024.html">2024</option>
+  </select>
+</section>
 
 <!-- TABLE -->
 <section class="table-section">
@@ -242,7 +287,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="fadeInUp">
   <p>© 2026 IPL Dashboard</p>
 </footer>
@@ -250,16 +294,10 @@
 <script>
 const menu = document.getElementById("menu");
 const nav = document.getElementById("nav");
-
-menu.onclick = () => {
-  nav.classList.toggle("show");
-}
+menu.onclick = () => nav.classList.toggle("show");
 
 const toggle = document.getElementById("themeToggle");
-
-toggle.onclick = () => {
-  document.body.classList.toggle("dark");
-}
+toggle.onclick = () => document.body.classList.toggle("dark");
 </script>
 
 </body>

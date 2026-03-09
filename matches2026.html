@@ -9,197 +9,266 @@
 
 <style>
 
-/* BASE DARK THEME */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+/* BASE */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-body {
-    background: #1e1e2f;
-    color: white;
-    overflow-x: hidden;
+body{
+background:#1e1e2f;
+color:white;
+overflow-x:hidden;
 }
 
 /* HEADER */
-header {
-    background: #111;
-    padding: 15px 5%;
-    display: flex;
-    flex-direction: column;
+
+header{
+background:#111;
+padding:15px 5%;
+display:flex;
+flex-direction:column;
 }
 
-.top-bar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.top-bar{
+display:flex;
+align-items:center;
+gap:12px;
+flex-wrap:wrap;
 }
 
-.top-bar img {
-    width: 50px;
-    height: 50px;
+.top-bar img{
+width:50px;
+height:50px;
 }
 
-.main-nav {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+.main-nav{
+margin-top:10px;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
 }
 
-.main-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #adb5bd;
-    font-size: 0.9rem;
-    transition: 0.3s ease;
+.main-nav a{
+text-decoration:none;
+font-weight:600;
+color:#adb5bd;
+font-size:0.9rem;
+transition:0.3s;
 }
 
 .main-nav a.active,
-.main-nav a:hover {
-    color: #ffa500;
+.main-nav a:hover{
+color:#ffa500;
 }
 
-/* MAIN CONTAINER */
-.container {
-    max-width: 900px;
-    margin: 25px auto;
-    padding: 0 15px;
+/* CONTAINER */
+
+.container{
+max-width:900px;
+margin:25px auto;
+padding:0 15px;
+width:100%;
 }
 
-/* FILTER SECTION */
-.filter-section {
-    background: #282968;
-    padding: 12px;
-    border-radius: 6px;
-    color: #ddd;
-    margin: 20px auto;
-    width: fit-content;
+/* FILTER */
+
+.filter-section{
+background:#282968;
+padding:12px;
+border-radius:6px;
+color:#ddd;
+margin:20px auto;
+width:fit-content;
+max-width:100%;
 }
 
-.filter-section label {
-    margin-right: 10px;
-    font-size: 0.9rem;
+.filter-section label{
+margin-right:10px;
+font-size:0.9rem;
 }
 
-.filter-section select {
-    padding: 8px 10px;
-    border-radius: 4px;
-    border: none;
-    background: #333;
-    color: white;
-    font-weight: 500;
+.filter-section select{
+padding:8px 10px;
+border-radius:4px;
+border:none;
+background:#333;
+color:white;
+font-weight:500;
 }
 
 /* TOOLBAR */
-.toolbar-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 20px 0;
-    border-bottom: 1px solid #444;
+
+.toolbar-container{
+display:flex;
+align-items:center;
+gap:12px;
+padding:20px 0;
+border-bottom:1px solid #444;
+flex-wrap:wrap;
+width:100%;
 }
 
-.dropdown {
-    padding: 10px 15px;
-    border: 1px solid #444;
-    border-radius: 4px;
-    background: #222;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    color: #ccc;
-    transition: 0.3s ease;
+.dropdown{
+padding:10px 15px;
+border:1px solid #444;
+border-radius:4px;
+background:#222;
+cursor:pointer;
+font-weight:600;
+font-size:14px;
+color:#ccc;
+transition:0.3s;
+white-space:nowrap;
 }
 
-.dropdown:hover {
-    background: #333;
-    color: white;
+.dropdown:hover{
+background:#333;
+color:white;
 }
 
-.download-btn {
-    margin-left: auto;
-    padding: 10px 15px;
-    border: 1px solid #444;
-    border-radius: 4px;
-    background: #222;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: bold;
-    color: #ccc;
-    transition: 0.3s ease;
+.download-btn{
+margin-left:auto;
+padding:10px 15px;
+border:1px solid #444;
+border-radius:4px;
+background:#222;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:8px;
+font-weight:bold;
+color:#ccc;
+transition:0.3s;
 }
 
-.download-btn:hover {
-    background: #333;
-    color: white;
+.download-btn:hover{
+background:#333;
+color:white;
 }
 
 /* NO FIXTURES */
-.no-fixtures {
-    text-align: center;
-    padding: 60px 20px;
-    font-size: 1rem;
-    color: #aaa;
+
+.no-fixtures{
+text-align:center;
+padding:60px 20px;
+font-size:1rem;
+color:#aaa;
 }
 
-.no-fixtures span {
-    display: block;
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-    color: #555;
+.no-fixtures span{
+display:block;
+font-size:1.8rem;
+margin-bottom:12px;
+color:#555;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width:768px){
+
+.main-nav{
+gap:18px;
+}
+
+.container{
+margin:15px auto;
+}
+
+.toolbar-container{
+flex-wrap:wrap;
+}
+
+.download-btn{
+margin-left:0;
+}
+
+}
+
+@media (max-width:600px){
+
+.top-bar{
+justify-content:center;
+text-align:center;
+}
+
+.main-nav{
+gap:15px;
+font-size:0.8rem;
+}
+
+.toolbar-container{
+flex-direction:column;
+align-items:stretch;
+gap:10px;
+}
+
+.dropdown{
+width:100%;
+text-align:center;
+}
+
+.download-btn{
+width:100%;
+justify-content:center;
+}
+
+.filter-section{
+width:100%;
+text-align:center;
+}
+
 }
 
 </style>
 </head>
+
 <body>
 
 <header>
-    <div class="top-bar">
-        <img src="/IPL-2024-2025-2026/img/ipl-logo.png" alt="IPL Logo">
-        <span style="font-size: 1rem; font-weight: 700;">Indian Premier League</span>
-    </div>
-    <nav class="main-nav">
-        <a href="matches2026.html" class="active">MATCHES</a>
-        <a href="ipl_Table2026.html">TABLE</a>
-        <a>STATS</a>
-        <a href="players.html">PLAYERS</a>
-    </nav>
+<div class="top-bar">
+<img src="/IPL-2024-2025-2026/img/ipl-logo.png">
+<span style="font-size:1rem;font-weight:700;">Indian Premier League</span>
+</div>
+
+<nav class="main-nav">
+<a href="matches2026.html" class="active">MATCHES</a>
+<a href="ipl_Table2026.html">TABLE</a>
+<a href="stats2026.html">STATS</a>
+<a href="players.html">PLAYERS</a>
+</nav>
 </header>
 
 <main class="container">
 
-    <!-- FILTER -->
-    <section class="filter-section">
-        <label for="year-select">Season</label>
-        <select id="year-select" onchange="if(this.value) window.location.href=this.value;">
-            <option value="ipl_Table2026.html" selected>2026</option>
-            <option value="ipl_table.html">2025</option>
-            <option value="ipl2024.html">2024</option>
-        </select>
-    </section>
+<section class="filter-section">
+<label for="year-select">Season</label>
+<select id="year-select" onchange="if(this.value) window.location.href=this.value;">
+<option value="ipl_Table2026.html" selected>2026</option>
+<option value="ipl_table.html">2025</option>
+<option value="ipl2024.html">2024</option>
+</select>
+</section>
 
-    <!-- TOOLBAR -->
-    <div class="toolbar-container">
-        <div class="dropdown">ALL TEAMS ▼</div>
-        <div class="dropdown">ALL VENUES ▼</div>
-        <div class="dropdown">SEASON 2026</div>
+<div class="toolbar-container">
+<div class="dropdown">ALL TEAMS ▼</div>
+<div class="dropdown">ALL VENUES ▼</div>
+<div class="dropdown">SEASON 2026</div>
 
-        <button class="download-btn">
-            Download <span>&#x2B07;</span>
-        </button>
-    </div>
+<button class="download-btn">
+Download <span>&#x2B07;</span>
+</button>
+</div>
 
-    <!-- NO FIXTURES MESSAGE -->
-    <div class="no-fixtures">
-        <span>⚠️</span>
-        No Fixtures Available<br>
-        Currently Not Available
-    </div>
+<div class="no-fixtures">
+<span>⚠️</span>
+No Fixtures Available<br>
+Currently Not Available
+</div>
 
 </main>
 
