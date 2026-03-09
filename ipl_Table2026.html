@@ -1,147 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPL Table 2026</title>
-    <link rel="stylesheet" href="ipl_Table2026.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPL Table 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+/* BASE STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #1e1e2f;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: #111;
+    padding: 15px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.top-bar img {
+    width: 50px;
+    height: 50px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+.main-nav a {
+    color: #adb5bd;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.main-nav a.active, .main-nav a:hover {
+    color: #ffa500;
+}
+
+/* FILTER SECTION */
+.filter-section {
+    background: #282968;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 20px auto;
+    width: fit-content;
+    font-weight: bold;
+}
+#year-select {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    background: #444;
+    color: white;
+}
+
+/* TABLE */
+.table-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #222;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.ipl-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.ipl-table th, .ipl-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.ipl-table th {
+    background: #1f2245;
+    color: #ccc;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.ipl-table tbody tr {
+    opacity: 0;
+    animation: popInScale 0.5s ease forwards;
+}
+
+.ipl-table tbody tr:nth-child(1){ animation-delay: 0.1s; }
+.ipl-table tbody tr:nth-child(2){ animation-delay: 0.2s; }
+.ipl-table tbody tr:nth-child(3){ animation-delay: 0.3s; }
+.ipl-table tbody tr:nth-child(4){ animation-delay: 0.4s; }
+.ipl-table tbody tr:nth-child(5){ animation-delay: 0.5s; }
+.ipl-table tbody tr:nth-child(6){ animation-delay: 0.6s; }
+.ipl-table tbody tr:nth-child(7){ animation-delay: 0.7s; }
+.ipl-table tbody tr:nth-child(8){ animation-delay: 0.8s; }
+.ipl-table tbody tr:nth-child(9){ animation-delay: 0.9s; }
+.ipl-table tbody tr:nth-child(10){ animation-delay: 1s; }
+
+.ipl-table tbody tr:hover {
+    background: #ffa50033;
+    transform: scale(1.02);
+}
+
+/* TEAM CELL */
+.team-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    min-width: 150px;
+    text-align: left;
+}
+.team-cell img {
+    width: 30px;
+}
+
+/* ANIMATIONS */
+@keyframes popInScale {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .hide-mobile { display:none; }
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="top-bar" style="display: flex; align-items: center; justify-content: start;">
-            <span style="width: 50px; height: 50px;"><img style="width: 50px; height: 50px;" src="https://crystalpng.com/wp-content/uploads/2025/09/ipl-logo.png" alt=""></span>
-            <span style="margin-left: 15px; font-weight: bold; font-size: 0.9rem; ">Indian Premier League</span>
-        </div>
-        <nav class="main-nav">
-            <a href="matches2026.html">MATCHES</a>
-            <a class="active">TABLE</a>
-            <a href="stats2026.html">STATS</a>
-            <a href="players.html">PLAYERS</a>
-        </nav>
-    </header>
+<header>
+    <div class="top-bar">
+        <img src="https://crystalpng.com/wp-content/uploads/2025/09/ipl-logo.png" alt="IPL Logo">
+        <span>Indian Premier League</span>
+    </div>
+    <nav class="main-nav">
+        <a href="matches2026.html">MATCHES</a>
+        <a class="active" href="ipl_Table2026.html">TABLE</a>
+        <a href="stats2026.html">STATS</a>
+        <a href="players.html">PLAYERS</a>
+    </nav>
+</header>
 
-    <main class="container">
+<main class="container">
+    <section class="filter-section">
+        <label for="year-select">Season</label>
+        <select id="year-select" onchange="if(this.value) window.location.href=this.value;">
+            <option value="ipl_Table2026.html" selected>2026</option>
+            <option value="ipl_table.html">2025</option>
+            <option value="ipl2024.html">2024</option>
+        </select>
+    </section>
 
-        <section class="filter-section">
-            <label for="year-select">Season</label>
-            <select id="year-select" onchange="if(this.value) window.location.href=this.value;">
-                <option value="ipl_Table2026.html" selected>2026</option>
-                <option value="ipl_table.html">2025</option>
-                <option value="ipl2024.html">2024</option>
-            </select>
-        </section>
-
-        <section class="table-container">
-            <table class="ipl-table">
-                <thead>
-                    <tr>
-                        <th>Pos</th>
-                        <th class="text-left">Team</th>
-                        <th>M</th>
-                        <th>W</th>
-                        <th>L</th>
-                        <th class="hide-mobile">NRR</th>
-                        <th>Pts</th>
-                        <th class="hide-mobile">Last 5</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td>1</td>
-                        <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/fr/f/f5/Chennai_Super_Kings_%28logo%29.svg" alt=""> CSK</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td class="team-cell"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZ1G-bK_p-xdUj7qnjOmg78UzJzN_Gd1jKQ&s" alt="DC"> DC</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Gujarat_Titans_Logo.svg/1280px-Gujarat_Titans_Logo.svg.png" alt=""> GT</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-
-                     <tr>
-                        <td>4</td>
-                        <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/1200px-Kolkata_Knight_Riders_Logo.svg.png" alt="KKR"> KKR</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-
-                     <tr>
-                        <td>5</td>
-                        <td class="team-cell"><img src="https://logowik.com/content/uploads/images/lucknow-super-giants3550.logowik.com.webp" alt=""> LSG</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-
-                    <tr>
-                        <td>6</td>
-                        <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/mr/c/cd/Mumbai_Indians_Logo.svg" alt=""> MI</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-
-                    <tr>
-                        <td>7</td>
-                        <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Punjab_Kings_Logo.svg/1200px-Punjab_Kings_Logo.svg.png" alt="KKR"> PBKS</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-
-                    <tr>
-                        <td>8</td>
-                        <td class="team-cell"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwTfKximy4bF1V8HMHZulLZy1WCimdHlDHxg&s" alt="RCB"> RCB</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-
-                    <tr>
-                        <td>9</td>
-                        <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/hi/6/60/Rajasthan_Royals_Logo.svg" alt=""> RR</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>10</td>
-                        <td class="team-cell"><img src="https://logowik.com/content/uploads/images/sunrisers-hyderabad5129.jpg" alt=""> SRH</td>
-                        <td>0</td><td>0</td><td>0</td>
-                        <td class="hide-mobile">+0.00</td>
-                        <td>00</td>
-                        <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </section>
-    </main>
+    <section class="table-container">
+        <table class="ipl-table">
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th class="text-left">Team</th>
+                    <th>M</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th class="hide-mobile">NRR</th>
+                    <th>Pts</th>
+                    <th class="hide-mobile">Last 5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/fr/f/f5/Chennai_Super_Kings_%28logo%29.svg" alt=""> CSK</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="team-cell"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZ1G-bK_p-xdUj7qnjOmg78UzJzN_Gd1jKQ&s" alt=""> DC</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Gujarat_Titans_Logo.svg/1280px-Gujarat_Titans_Logo.svg.png" alt=""> GT</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Kolkata_Knight_Riders_Logo.svg/1200px-Kolkata_Knight_Riders_Logo.svg.png" alt=""> KKR</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td class="team-cell"><img src="https://logowik.com/content/uploads/images/lucknow-super-giants3550.logowik.com.webp" alt=""> LSG</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/mr/c/cd/Mumbai_Indians_Logo.svg" alt=""> MI</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Punjab_Kings_Logo.svg/1200px-Punjab_Kings_Logo.svg.png" alt=""> PBKS</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td class="team-cell"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwTfKximy4bF1V8HMHZulLZy1WCimdHlDHxg&s" alt=""> RCB</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td class="team-cell"><img src="https://upload.wikimedia.org/wikipedia/hi/6/60/Rajasthan_Royals_Logo.svg" alt=""> RR</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td class="team-cell"><img src="https://logowik.com/content/uploads/images/sunrisers-hyderabad5129.jpg" alt=""> SRH</td>
+                    <td>0</td><td>0</td><td>0</td>
+                    <td class="hide-mobile">+0.00</td>
+                    <td>00</td>
+                    <td class="hide-mobile">⚪⚪⚪⚪⚪</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
 
 </body>
 </html>

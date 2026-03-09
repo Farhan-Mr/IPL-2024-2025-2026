@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IPL Dashboard</title>
+<title>Pepsi IPL</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,140 +15,91 @@
 
 <body>
 
-<header>
+<header class="fadeInDown">
 
-<div class="logo">
-<img src="img/PepsiIPL_LOGO.png">
-<h2>IPL Dashboard</h2>
-</div>
+  <div class="logo">
+    <img src="/IPL-2024-2025-2026/img/ipl-logo.png">
+    <h2>Pepsi IPL</h2>
+  </div>
 
-<div class="hamburger" id="menu">
-☰
-</div>
+  <div class="hamburger" id="menu">
+    ☰
+  </div>
 
-<nav id="nav">
+  <nav id="nav">
+    <a href="index.html">Home</a>
+    <a href="matches2026.html">Matches</a>
+    <a href="ipl_Table2026.html">Points Table</a>
+    <a href="players.html">Players</a>
+  </nav>
 
-<a href="#">Home</a>
-<a href="#">Matches</a>
-<a href="#">Points Table</a>
-<a href="#">Players</a>
-
-</nav>
-
-<button id="themeToggle">🌙</button>
+  <button id="themeToggle">🌙</button>
 
 </header>
 
 
-<section class="hero">
+<section class="hero slideIn">
 
-<h1 class="ipl-title">
-Indian Premier League
-</h1>
+  <h1 class="ipl-title">Indian Premier League</h1>
 
-<p class="subtitle">
-Matches • Stats • Players • Teams
-</p>
+  <p class="subtitle">Matches • Stats • Players • Teams</p>
 
 </section>
 
 
 <section class="teams">
 
-<h2>IPL Teams</h2>
+  <h2 class="fadeInUp">IPL Teams</h2>
 
-<div class="team-grid">
+  <div class="team-grid">
 
-<div class="team-card">CSK</div>
-<div class="team-card">MI</div>
-<div class="team-card">RCB</div>
-<div class="team-card">KKR</div>
-<div class="team-card">SRH</div>
-<div class="team-card">GT</div>
-<div class="team-card">RR</div>
-<div class="team-card">DC</div>
+    <div class="team-card popIn">CSK</div>
+    <div class="team-card popIn">MI</div>
+    <div class="team-card popIn">RCB</div>
+    <div class="team-card popIn">KKR</div>
+    <div class="team-card popIn">SRH</div>
+    <div class="team-card popIn">GT</div>
+    <div class="team-card popIn">RR</div>
+    <div class="team-card popIn">DC</div>
 
-</div>
-
-</section>
-
-
-<section class="table">
-
-<h2>Points Table</h2>
-
-<table>
-
-<tr>
-<th>Team</th>
-<th>Matches</th>
-<th>Points</th>
-</tr>
-
-<tr>
-<td>CSK</td>
-<td>14</td>
-<td>18</td>
-</tr>
-
-<tr>
-<td>MI</td>
-<td>14</td>
-<td>16</td>
-</tr>
-
-<tr>
-<td>RCB</td>
-<td>14</td>
-<td>14</td>
-</tr>
-
-<tr>
-<td>KKR</td>
-<td>14</td>
-<td>12</td>
-</tr>
-
-</table>
+  </div>
 
 </section>
 
 
 <section class="players">
 
-<h2>Star Players</h2>
+  <h2 class="fadeInUp">Star Players</h2>
 
-<div class="player-grid">
+  <div class="player-grid">
 
-<div class="player-card">
-<h3>Virat Kohli</h3>
-<p>RCB</p>
-</div>
+    <div class="player-card hoverGrow">
+      <h3>Virat Kohli</h3>
+      <p>RCB</p>
+    </div>
 
-<div class="player-card">
-<h3>MS Dhoni</h3>
-<p>CSK</p>
-</div>
+    <div class="player-card hoverGrow">
+      <h3>MS Dhoni</h3>
+      <p>CSK</p>
+    </div>
 
-<div class="player-card">
-<h3>Rohit Sharma</h3>
-<p>MI</p>
-</div>
+    <div class="player-card hoverGrow">
+      <h3>Rohit Sharma</h3>
+      <p>MI</p>
+    </div>
 
-<div class="player-card">
-<h3>Shubman Gill</h3>
-<p>GT</p>
-</div>
+    <div class="player-card hoverGrow">
+      <h3>Shubman Gill</h3>
+      <p>GT</p>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 
-<footer>
-
-<p>© 2026 IPL Dashboard</p>
-
+<footer class="fadeInUp">
+  <p>© 2026 IPL Dashboard</p>
 </footer>
 
 
@@ -158,17 +109,13 @@ const menu = document.getElementById("menu")
 const nav = document.getElementById("nav")
 
 menu.onclick = () => {
-
-nav.classList.toggle("show")
-
+  nav.classList.toggle("show")
 }
 
 const toggle = document.getElementById("themeToggle")
 
 toggle.onclick = () => {
-
-document.body.classList.toggle("dark")
-
+  document.body.classList.toggle("dark")
 }
 
 </script>

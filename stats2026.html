@@ -1,56 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPL Matches 2026</title>
-    <link rel="stylesheet" href="ipl_table.css">
+<meta charset="UTF-8">
+<title>IPL Matches 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-  
-        .fixtures-container {
-    padding: 40px;
-    text-align: center;
-    border-top: 1px solid #dcdcdc;
-    font-family: sans-serif;
-    color: #555;
-  }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  .fixtures-container h3 {
-    margin: 0 0 5px 0;
-    font-size: 18px;
-    font-weight: 500;
-  }
+<style>
 
-  .fixtures-container p {
+/* BASE DARK THEME */
+* {
     margin: 0;
-    font-size: 16px;
-  }
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    </style>
+body {
+    background: #1e1e2f;
+    color: white;
+    overflow-x: hidden;
+}
 
+/* HEADER */
+header {
+    background: #111;
+    padding: 15px 5%;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.top-bar img {
+    width: 50px;
+    height: 50px;
+}
+
+.main-nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #adb5bd;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: #ffa500;
+}
+
+/* FIXTURES MESSAGE */
+.fixtures-container {
+    padding: 60px 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #ccc;
+    background: #222;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.fixtures-container p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #bbb;
+}
+
+.fixtures-container h3 {
+    font-size: 1.4rem;
+    color: #ffa500;
+    margin-bottom: 10px;
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="top-bar" style="display: flex; align-items: center; justify-content: start;">
-            <span style="width: 50px; height: 50px;"><img style="width: 50px; height: 50px;" src="/IPL-2024-2025-2026/img/ipl-logo.png" alt=""></span>
-            <span style="margin-left: 15px; font-weight: bold; font-size: 0.9rem; ">Indian Premier League</span>
-        </div>
-        <nav class="main-nav">
-            <a href="matches2026.html">MATCHES</a>
-            <a class="active" href="ipl_Table2026.html">TABLE</a>
-            <a style="color: white;" href="stats2026.html">STATS</a>
-            <a href="players.html">PLAYERS</a>
-        </nav>
-    </header>
+<header>
+    <div class="top-bar">
+        <img src="/IPL-2024-2025-2026/img/ipl-logo.png" alt="IPL Logo">
+        <span style="font-size: 1rem; font-weight: 700;">Indian Premier League</span>
+    </div>
+    <nav class="main-nav">
+        <a href="matches2026.html" class="active">MATCHES</a>
+        <a href="ipl_Table2026.html">TABLE</a>
+        <a href="stats2026.html">STATS</a>
+        <a href="players.html">PLAYERS</a>
+    </nav>
+</header>
 
-    <main class="container">
-        <div class="fixtures-container">
+<main class="container">
 
-  <p>Currently Not Avaliable</p>
-</div>
-    </main>
+  <div class="fixtures-container">
+    <h3>📅 IPL Fixtures</h3>
+    <p>Currently Not Available</p>
+  </div>
+
+</main>
 
 </body>
 </html>

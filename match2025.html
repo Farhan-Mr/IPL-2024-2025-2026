@@ -1,171 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match 2025 - RCB vs PBKS Summary</title>
-    <style>
-        /* CSS REUSED FROM YOUR MAIN FILE */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-        body { background-color: #f0f2f5; color: #333; }
-        
-        header { background-color: #223577; color: white; }
-        .top-bar { padding: 10px 20px; font-size: 0.9rem; background-color: rgba(0,0,0,0.1); display: flex; align-items: center; }
-        .main-nav { width: 70vw; margin: auto; display: flex; justify-content: space-around; padding: 15px 0; }
-        .main-nav a { color: #adb5bd; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-        .main-nav a.active { color: white; border-bottom: 3px solid white; padding-bottom: 5px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Match 2025 - RCB vs PBKS Summary</title>
 
-        /* MATCH SPECIFIC STYLES FROM IMAGES */
-        .container { max-width: 650px; margin: 20px auto; padding: 0 15px; }
-        .match-card { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); padding: 16px; }
-        
-        .match-date { font-size: 14px; color: #70757a; margin-bottom: 12px; }
-        
-        .tabs { display: flex; gap: 30px; border-bottom: 1px solid #e8eaed; margin-bottom: 20px; padding-bottom: 8px; }
-        .tab { font-size: 13px; font-weight: bold; color: #70757a; text-transform: uppercase; cursor: pointer; text-decoration: none; }
-        .tab.active { color: #1a73e8; border-bottom: 3px solid #1a73e8; margin-bottom: -11px; }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        .score-row { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }
-        .team-info { text-align: center; width: 80px; }
-        .team-logo { width: 45px; height: 45px; margin-bottom: 8px; }
-        .team-name { font-size: 1.0rem; }
-        .score-block { text-align: center; }
-        .score-main { font-size: 20px; font-weight: 350; color: #202124; }
-        .overs { font-size: 14px; color: #70757a; }
+<style>
 
-        .match-result { text-align: center; margin: 15px 0; }
-        .winner-text { font-size: 15px; font-weight: 400; }
-        .match-meta { font-size: 14px; color: #70757a; margin-top: 5px; }
+/* BASE DARK THEME */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        /* Award Sections */
-        .award-box { border-radius: 8px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; color: white; }
-        .award-tournament { background-color: #bdc1c6; color: #b2b2b2; } /* Grey for Tournament */
-        .award-match { background-color: #960000; } /* Dark Red for Match */
+body {
+    background: #1e1e2f;
+    color: white;
+    overflow-x: hidden;
+}
 
-        .award-label { font-size: 12px; text-transform: uppercase; opacity: 0.9; color: white; }
-        .player-name { font-size: 16px; font-weight: 450; margin-top: 4px; color: white; }
+/* HEADER */
+header {
+    background: #111;
+    padding: 15px 5%;
+}
 
-        .award-labelR { font-size: 12px; text-transform: uppercase; opacity: 0.9;  }
-        .player-nameR { font-size: 16px; font-weight: 450; margin-top: 4px; }
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-        .player-img { width: 48px; height: 48px; border-radius: 50%; background: #eee; border: 2px solid rgba(255,255,255,0.3); }
+.top-bar img {
+    width: 50px;
+    height: 50px;
+}
 
-        /* Stats List */
-        .innings-divider { text-align: center; font-size: 13px; color: #70757a; margin: 25px 0 15px; display: flex; align-items: center; }
-        .innings-divider::before, .innings-divider::after { content: ""; flex: 1; border-bottom: 1px solid #e8eaed; margin: 0 15px; }
-        
-        .stat-line { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f1f3f4; font-size: 14px; }
-        .player-stat { display: flex; align-items: center; gap: 10px; }
-        .mini-avatar { width: 32px; height: 32px; border-radius: 50%; background: #eee; }
-        .text-right { flex-direction: row-reverse; text-align: right; }
+.main-nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
 
-        .footer-details { margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee; font-size: 14px; line-height: 1.8; }
-        .footer-details span { color: #188038; font-weight: bold; }
-    </style>
+.main-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #adb5bd;
+    transition: 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    color: #ffa500;
+}
+
+/* MAIN CONTENT */
+.container {
+    max-width: 750px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+/* MATCH CARD */
+.match-card {
+    background: #222;
+    border-radius: 8px;
+    padding: 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    animation: fadeInBig 0.5s ease-out both;
+}
+
+.match-date {
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-bottom: 14px;
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 20px;
+}
+
+.tab {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    cursor: pointer;
+    color: #777;
+}
+
+.tab.active {
+    color: #ffa500;
+    border-bottom: 2px solid #ffa500;
+}
+
+/* SCORE ROW */
+.score-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0;
+    flex-wrap: wrap;
+}
+
+.team-info {
+    text-align: center;
+    width: 80px;
+}
+
+.team-logo {
+    width: 50px;
+    margin-bottom: 8px;
+}
+
+.team-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ddd;
+}
+
+.score-block {
+    text-align: center;
+    width: 90px;
+    margin: 6px 0;
+}
+
+.score-main {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.overs {
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+/* MATCH RESULT */
+.match-result {
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #ffa500;
+}
+
+.match-meta {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 18px;
+}
+
+/* AWARDS */
+.award-box {
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.award-tournament {
+    background: #333;
+}
+
+.award-match {
+    background: #4d0e0e;
+}
+
+.award-label, .award-labelR {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.player-name, .player-nameR {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* PLAYER IMAGE */
+.player-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #444;
+    border: 2px solid #555;
+}
+
+/* INNINGS DIVIDER */
+.innings-divider {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.innings-divider::before, .innings-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #444;
+    margin: 0 10px;
+}
+
+/* STATS LIST */
+.stat-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.player-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mini-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #444;
+}
+
+.text-right {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* FOOTER DETAILS */
+.footer-details {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #333;
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+.footer-details span {
+    color: #ffa500;
+    font-weight: bold;
+}
+
+/* KEYFRAMES */
+@keyframes fadeInBig {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="top-bar">
-            <span style="width: 50px; height: 50px;"><img style="width: 50px; height: 50px;" src="https://crystalpng.com/wp-content/uploads/2025/09/ipl-logo.png" alt=""></span>
-            <span style="margin-left: 15px; font-weight: bold; font-size: 0.9rem;">Indian Premier League</span>
+<header>
+    <div class="top-bar">
+        <img src="https://crystalpng.com/wp-content/uploads/2025/09/ipl-logo.png" alt="IPL Logo">
+        <span style="font-size: 1rem; font-weight: 700;">Indian Premier League</span>
+    </div>
+    <nav class="main-nav">
+        <a href="match2025.html" class="active">MATCHES</a>
+        <a href="ipl_table.html">TABLE</a>
+        <a href="stats2025.html">STATS</a>
+        <a href="players.html">PLAYERS</a>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="match-card">
+
+        <div class="match-date">IPL • 3 Jun 25</div>
+
+        <div class="tabs">
+            <a class="tab active">Summary</a>
+            <a class="tab">Scorecard</a>
+            <a class="tab">Commentary</a>
         </div>
-        <nav class="main-nav">
-            <a href="match2025.html" class="active">MATCHES</a>
-            <a href="ipl_table.html">TABLE</a>
-            <a href="stats2025.html">STATS</a>
-            <a href="players.html">PLAYERS</a>
-        </nav>
-    </header>
 
-    <main class="container">
-        <div class="match-card">
-            <div class="match-date">IPL • 3 Jun 25</div>
-
-            <div class="tabs">
-                <a class="tab active">Summary</a>
-                <a class="tab">Scorecard</a>
-                <a class="tab">Commentary</a>
+        <div class="score-row">
+            <div class="team-info">
+                <img class="team-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwTfKximy4bF1V8HMHZulLZy1WCimdHlDHxg&s" alt="RCB">
+                <div class="team-name">RCB</div>
             </div>
-
-            <div class="score-row">
-                <div class="team-info">
-                    <img class="team-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwTfKximy4bF1V8HMHZulLZy1WCimdHlDHxg&s" alt="RCB">
-                    <div class="team-name">RCB</div>
-                </div>
-                <div class="score-block">
-                    <div class="score-main">190/9</div>
-                    <div class="overs">(20)</div>
-                </div>
-                <div class="score-block">
-                    <div class="score-main">184/7</div>
-                    <div class="overs">(20)</div>
-                </div>
-                <div class="team-info">
-                    <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Punjab_Kings_Logo.svg/1200px-Punjab_Kings_Logo.svg.png" alt="PBKS">
-                    <div class="team-name">PBKS</div>
-                </div>
+            <div class="score-block">
+                <div class="score-main">190/9</div>
+                <div class="overs">(20)</div>
             </div>
-
-            <div class="match-result">
-                <div class="winner-text">RCB won by 6 runs</div>
-                <div class="match-meta">Final • T20 74 of 74</div>
+            <div class="score-block">
+                <div class="score-main">184/7</div>
+                <div class="overs">(20)</div>
             </div>
-
-            <div class="award-box award-tournament">
-                <div>
-                    <div class="award-label">Player of the Tournament</div>
-                    <div class="player-name">Suryakumar Yadav (MI)</div>
-                </div>
-                <div class="player-img"></div>
-            </div>
-
-            <div class="award-box award-match">
-                <div>
-                    <div class="award-labelR">Player of the Match</div>
-                    <div class="player-nameR">Krunal Pandya (RCB) • 2/17 (4) & 4 (5)</div>
-                </div>
-                <div class="player-img"></div>
-            </div>
-
-            <div class="innings-divider">Royal Challengers • 190/9 (20)</div>
-            <div class="stat-line">
-                <div class="player-stat"><div class="mini-avatar"></div> Virat Kohli 43 (35)</div>
-                <div class="player-stat text-right"><div class="mini-avatar"></div> Arshdeep Singh 3/40 (4)</div>
-            </div>
-            <div class="stat-line">
-                <div class="player-stat"><div class="mini-avatar"></div> Rajat Patidar 26 (16)</div>
-                <div class="player-stat text-right"><div class="mini-avatar"></div> Kyle Jamieson 3/48 (4)</div>
-            </div>
-            <div class="stat-line">
-                <div class="player-stat"><div class="mini-avatar"></div> Liam Livingstone 25 (15)</div>
-                <div class="player-stat text-right"><div class="mini-avatar"></div> Vyshak Vijay kumar 1/30 (4)</div>
-            </div>
-
-
-            <div class="innings-divider">Kings • 184/7 (20)</div>
-            <div class="stat-line">
-                <div class="player-stat"><div class="mini-avatar"></div> Shashank Singh 61* (30)</div>
-                <div class="player-stat text-right"><div class="mini-avatar"></div> Krunal Pandya 2/17 (4)</div>
-            </div>
-            <div class="stat-line">
-                <div class="player-stat"><div class="mini-avatar"></div> Josh Inglis 61 (30)</div>
-                <div class="player-stat text-right"><div class="mini-avatar"></div> Bhuvenshwar Kumar 2/38 (4)</div>
-            </div>
-            <div class="stat-line">
-                <div class="player-stat"><div class="mini-avatar"></div> Prabhsimran Singh 61* (30)</div>
-                <div class="player-stat text-right"><div class="mini-avatar"></div> Yash Dayal 1/18 (3)</div>
-            </div>
-
-
-
-            <div class="footer-details">
-                <div><span>Toss:</span> PBKS won the toss and decided to bowl</div>
-                <div><span>Venue:</span> Narendra Modi Stadium, Ahmedabad</div>
-                <div style="color: #70757a; font-size: 12px; margin-top: 10px;">All times are in India Standard Time</div>
+            <div class="team-info">
+                <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Punjab_Kings_Logo.svg/1200px-Punjab_Kings_Logo.svg.png" alt="PBKS">
+                <div class="team-name">PBKS</div>
             </div>
         </div>
-    </main>
+
+        <div class="match-result">
+            <div>RCB won by 6 runs</div>
+            <div class="match-meta">Final • T20 74 of 74</div>
+        </div>
+
+        <div class="award-box award-tournament">
+            <div>
+                <div class="award-label">Player of the Tournament</div>
+                <div class="player-name">Suryakumar Yadav (MI)</div>
+            </div>
+            <div class="player-img"></div>
+        </div>
+
+        <div class="award-box award-match">
+            <div>
+                <div class="award-labelR">Player of the Match</div>
+                <div class="player-nameR">Krunal Pandya (RCB) • 2/17 (4) & 4 (5)</div>
+            </div>
+            <div class="player-img"></div>
+        </div>
+
+        <div class="innings-divider">Royal Challengers • 190/9 (20)</div>
+        <div class="stat-line">
+            <div class="player-stat"><div class="mini-avatar"></div> Virat Kohli 43 (35)</div>
+            <div class="player-stat text-right"><div class="mini-avatar"></div> Arshdeep Singh 3/40 (4)</div>
+        </div>
+        <div class="stat-line">
+            <div class="player-stat"><div class="mini-avatar"></div> Rajat Patidar 26 (16)</div>
+            <div class="player-stat text-right"><div class="mini-avatar"></div> Kyle Jamieson 3/48 (4)</div>
+        </div>
+        <div class="stat-line">
+            <div class="player-stat"><div class="mini-avatar"></div> Liam Livingstone 25 (15)</div>
+            <div class="player-stat text-right"><div class="mini-avatar"></div> Vyshak Vijay kumar 1/30 (4)</div>
+        </div>
+
+        <div class="innings-divider">Kings • 184/7 (20)</div>
+        <div class="stat-line">
+            <div class="player-stat"><div class="mini-avatar"></div> Shashank Singh 61* (30)</div>
+            <div class="player-stat text-right"><div class="mini-avatar"></div> Krunal Pandya 2/17 (4)</div>
+        </div>
+        <div class="stat-line">
+            <div class="player-stat"><div class="mini-avatar"></div> Josh Inglis 61 (30)</div>
+            <div class="player-stat text-right"><div class="mini-avatar"></div> Bhuvenshwar Kumar 2/38 (4)</div>
+        </div>
+        <div class="stat-line">
+            <div class="player-stat"><div class="mini-avatar"></div> Prabhsimran Singh 61* (30)</div>
+            <div class="player-stat text-right"><div class="mini-avatar"></div> Yash Dayal 1/18 (3)</div>
+        </div>
+
+        <div class="footer-details">
+            <div><span>Toss:</span> PBKS won the toss and decided to bowl</div>
+            <div><span>Venue:</span> Narendra Modi Stadium, Ahmedabad</div>
+            <div style="font-size: 0.75rem; color: #888; margin-top: 8px;">All times are in India Standard Time</div>
+        </div>
+
+    </div>
+</main>
 
 </body>
 </html>

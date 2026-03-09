@@ -1,71 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPL Stats 2025</title>
-    <link rel="stylesheet" href="ipl_table.css">
+<meta charset="UTF-8">
+<title>IPL Stats 2025</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-    /* Combined Styles */
-    .stats-container { 
-        font-family: sans-serif; 
-        max-width: 600px; 
-        margin: 20px auto; 
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-    }
-    
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    .row { 
-        display: flex; 
-        align-items: center; 
-        padding: 10px 0; 
-        border-bottom: 1px solid #eee; 
-    }
+<style>
 
-    .player-info { display: flex; align-items: center; flex: 1; }
-    .rank { width: 30px; font-weight: bold; }
+/* BASE DARK THEME */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    .player-info img 
-    { 
-        width: 40px; 
-        height: 40px; 
-        border-radius: 50%; 
-        margin-right: 15px; 
-        background-color: #eee; /* Placeholder color */
-    }
+body {
+    background: #1e1e2f;
+    color: white;
+    overflow-x: hidden;
+}
 
-    .name { font-weight: bold; }
-    .team { font-size: 0.85em; color: #666; }
+/* HEADER */
+header {
+    background: #111;
+    padding: 15px 5%;
+}
 
-    /* Alignment for numerical columns */
-    .m, .avg, .runs { width: 50px; text-align: center; }
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-    .header { font-weight: bold; color: #888; border-bottom: 2px solid #ddd; }
+.top-bar img {
+    width: 50px;
+    height: 50px;
+}
+
+.main-nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #adb5bd;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: #ffa500;
+}
+
+/* STATS CONTAINER */
+.stats-container {
+    max-width: 750px;
+    margin: 25px auto;
+    padding: 20px;
+    background: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* SECTION HEADINGS */
+.stats-container h5 {
+    color: #bbb;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* ROW */
+.row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.row.header {
+    border-bottom: 2px solid #444;
+    color: #ddd;
+    font-weight: 600;
+}
+
+/* PLAYER INFO */
+.player-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.player-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background: #444;
+    border: 1px solid #555;
+}
+
+.rank {
+    width: 30px;
+    font-weight: 600;
+    color: #ffa500;
+}
+
+.name {
+    font-weight: 600;
+    color: white;
+}
+
+.team {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+/* NUMERIC COLUMNS */
+.m, .avg, .runs {
+    width: 60px;
+    text-align: center;
+    color: #ccc;
+}
+
 </style>
-
 </head>
+
 <body>
 
-    <header>
-        <div class="top-bar" style="display: flex; align-items: center; justify-content: start;">
-            <span style="width: 50px; height: 50px;"><img style="width: 50px; height: 50px;" src="/IPL-2024-2025-2026/img/ipl-logo.png" alt=""></span>
-            <span style="margin-left: 15px; font-weight: bold; font-size: 0.9rem; ">Indian Premier League</span>
-        </div>
-        <nav class="main-nav">
-            <a href="match2025.html">MATCHES</a>
-            <a class="active" href="ipl_table.html">TABLE</a>
-            <a style="color: white;">STATS</a>
-            <a href="players.html">PLAYERS</a>
-        </nav>
-    </header>
+<header>
+    <div class="top-bar">
+        <img src="/IPL-2024-2025-2026/img/ipl-logo.png" alt="IPL Logo">
+        <span style="font-size: 1rem; font-weight: 700;">Indian Premier League</span>
+    </div>
+    <nav class="main-nav">
+        <a href="match2025.html">MATCHES</a>
+        <a href="ipl_table.html">TABLE</a>
+        <a class="active">STATS</a>
+        <a href="players.html">PLAYERS</a>
+    </nav>
+</header>
 
-    <main class="container">
-        <div class="stats-container">
-  
-  <h5 style="color: #666;">Runs</h5>
+<main class="container">
+
+<div class="stats-container">
+
+  <!-- RUNS SECTION -->
+  <h5>📊 Runs</h5>
   <div class="row header">
     <span class="player" style="flex: 1;">Player</span>
     <span class="m">M</span>
@@ -87,7 +176,6 @@
     <span class="runs">759</span>
   </div>
 
-
   <div class="row">
     <div class="player-info">
       <span class="rank">2</span>
@@ -101,7 +189,6 @@
     <span class="avg">65.18</span>
     <span class="runs">717</span>
   </div>
-
 
   <div class="row">
     <div class="player-info">
@@ -117,7 +204,6 @@
     <span class="runs">657</span>
   </div>
 
-
   <div class="row">
     <div class="player-info">
       <span class="rank">4</span>
@@ -131,7 +217,6 @@
     <span class="avg">50.00</span>
     <span class="runs">650</span>
   </div>
-
 
   <div class="row">
     <div class="player-info">
@@ -147,16 +232,16 @@
     <span class="runs">627</span>
   </div>
 
-      <h5 style="margin-top: 10px; color: #666 " >Wickets</h5>
-
-    <div class="row header">
+  <!-- WICKETS SECTION -->
+  <h5 style="margin-top: 15px;">🧤 Wickets</h5>
+  <div class="row header">
     <span class="player" style="flex: 1;">Players</span>
     <span class="m">M</span>
     <span class="avg">Econ</span>
     <span class="runs">W</span>
   </div>
 
-    <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">1</span>
       <img src="/IPL-2024-2025-2026/img/Prashid.avif">
@@ -198,7 +283,7 @@
     <span class="runs">22</span>
   </div>
 
-    <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">4</span>
       <img src="/IPL-2024-2025-2026/img/Boult.avif">
@@ -212,7 +297,7 @@
     <span class="runs">22</span>
   </div>
 
-      <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">5</span>
       <img src="/IPL-2024-2025-2026/img/Arsh.avif">
@@ -226,15 +311,15 @@
     <span class="runs">21</span>
   </div>
 
-
-  <h5 style="margin-top: 10px; color: #666">Highest Scores</h5>
+  <!-- HIGHEST SCORES -->
+  <h5 style="margin-top: 15px;">🔥 Highest Scores</h5>
   <div class="row header">
     <span class="player" style="flex: 1;">Players</span>
     <span class="m">SR</span>
     <span class="avg">HS</span>
   </div>
 
-        <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">1</span>
       <img src="/IPL-2024-2025-2026/img/sharma.avif">
@@ -247,7 +332,8 @@
     <span class="runs">141</span>
   </div>
 
-    <div class="row">
+  <!-- remaining highest scores entries -->
+  <div class="row">
     <div class="player-info">
       <span class="rank">2</span>
       <img src="/IPL-2024-2025-2026/img/pant.avif">
@@ -260,7 +346,7 @@
     <span class="runs">118*</span>
   </div>
 
-      <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">3</span>
       <img src="/IPL-2024-2025-2026/img/mich.webp">
@@ -273,7 +359,7 @@
     <span class="runs">117</span>
   </div>
 
-      <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">4</span>
       <img src="/IPL-2024-2025-2026/img/kl.avif">
@@ -286,7 +372,7 @@
     <span class="runs">112*</span>
   </div>
 
-      <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">5</span>
       <img src="/IPL-2024-2025-2026/img/Sai.webp">
@@ -299,8 +385,8 @@
     <span class="runs">108*</span>
   </div>
 
-
-  <h5 style="color: #666; margin-top: 15px;">Best Bowling Figure</h5>
+  <!-- BEST BOWLING FIGURES -->
+  <h5 style="margin-top: 15px;">🎯 Best Bowling Figure</h5>
   <div class="row header">
     <span class="player" style="flex: 1;">Player</span>
     <span class="m">O</span>
@@ -336,7 +422,7 @@
     <span class="runs">5/36</span>
   </div>
 
-    <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">3</span>
       <img src="/IPL-2024-2025-2026/img/siraj.avif">
@@ -350,7 +436,7 @@
     <span class="runs">4/17</span>
   </div>
 
-    <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">4</span>
       <img src="/IPL-2024-2025-2026/img/noor.avif">
@@ -364,7 +450,7 @@
     <span class="runs">4/18</span>
   </div>
 
-    <div class="row">
+  <div class="row">
     <div class="player-info">
       <span class="rank">5</span>
       <img src="/IPL-2024-2025-2026/img/jessi.avif">
@@ -378,10 +464,8 @@
     <span class="runs">4/22</span>
   </div>
 
-
-
 </div>
-    </main>
 
+</main>
 </body>
 </html>

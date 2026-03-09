@@ -1,468 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>IPL Players </title>
-    <link rel="stylesheet" href="ipl_table.css">
-    <style>
-        /* Embedding the CSS internally */
-        .player-card {
-            width: 200px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            font-family: sans-serif;
-            background: white;
-            border: 1px solid #ddd; /* Added for better visibility */
-            margin: 20px;
-        }
+<meta charset="UTF-8">
+<title>IPL Players</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .player-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        .player-info {
-            padding: 15px;
-        }
+<style>
 
-        .player-name {
-            margin: 0;
-            font-size: 1.2rem;
-            color: #333;
-        }
+/* BASE DARK THEME */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .player-role {
-            color: #555;
-            margin: 5px 0;
-            font-size: 0.9rem;
-        }
+body {
+    background: #1e1e2f;
+    color: white;
+    overflow-x: hidden;
+}
 
-        .team-info {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: #777;
-            font-size: 0.85rem;
-        }
-    </style>
+/* HEADER */
+header {
+    background: #111;
+    padding: 15px 5%;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.top-bar img {
+    width: 50px;
+    height: 50px;
+}
+
+.main-nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #adb5bd;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: #ffa500;
+}
+
+/* PLAYERS GRID */
+.players-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+    margin: 20px auto;
+    max-width: 1100px;
+}
+
+/* PLAYER CARD */
+.player-card {
+    background: #222;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+}
+
+.player-card:hover {
+    transform: scale(1.05);
+}
+
+.player-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid #333;
+}
+
+.player-info {
+    padding: 14px 12px;
+}
+
+.player-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.player-role {
+    font-size: 0.85rem;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.team-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+.team-name {
+    font-weight: 500;
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="top-bar" style="display: flex; align-items: center; justify-content: start;">
-            <span style="width: 50px; height: 50px;"><img style="width: 50px; height: 50px;" src="/IPL-2024-2025-2026/img/ipl-logo.png" alt=""></span>
-            <span style="margin-left: 15px; font-weight: bold; font-size: 0.9rem; ">Indian Premier League</span>
-        </div>
-        <nav class="main-nav">
-            <a href="matches2026.html">MATCHES</a>
-            <a class="active" href="ipl_Table2026.html">TABLE</a>
-            <a href="stats2026.html">STATS</a>
-            <a href="players.html" style="color: white;">PLAYERS</a>
-        </nav>
-    </header>
+<header>
+    <div class="top-bar">
+        <img src="/IPL-2024-2025-2026/img/ipl-logo.png" alt="IPL Logo">
+        <span style="font-size: 1rem; font-weight: 700;">Indian Premier League</span>
+    </div>
+    <nav class="main-nav">
+        <a href="matches2026.html">MATCHES</a>
+        <a href="ipl_Table2026.html">TABLE</a>
+        <a href="stats2026.html">STATS</a>
+        <a class="active">PLAYERS</a>
+    </nav>
+</header>
 
-    <main style="width: 50vw; height: auto; margin: auto; margin-top: 15px; display: flex; flex-wrap: wrap;">
+<main class="players-container">
+
+    <!-- ALL PLAYERS BELOW (FULL DATA PRESERVED) -->
 
     <div class="player-card">
         <img src="/IPL-2024-2025-2026/img/sanju.jpg" alt="Sanju Samson" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Sanju Samson</h2>
-            <p class="player-role">Wicket-keeper</p>
-            <div class="team-info">
-                <span class="team-name">Super Kings</span>
-            </div>
+            <h3 class="player-name">Sanju Samson</h3>
+            <p class="player-role">Wicket‑keeper</p>
+            <div class="team-info"><span class="team-name">Super Kings</span></div>
         </div>
     </div>
 
     <div class="player-card">
         <img src="/IPL-2024-2025-2026/img/virat.avif" alt="Virat" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Virat Kolhi</h2>
+            <h3 class="player-name">Virat Kohli</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Royal Challengers</span>
-            </div>
+            <div class="team-info"><span class="team-name">Royal Challengers</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/MS.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/MS.avif" alt="MS Dhoni" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">MS Dhoni</h2>
-            <p class="player-role">Wicket-keeper</p>
-            <div class="team-info">
-                <span class="team-name">Super Kings</span>
-            </div>
+            <h3 class="player-name">MS Dhoni</h3>
+            <p class="player-role">Wicket‑keeper</p>
+            <div class="team-info"><span class="team-name">Super Kings</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/kl.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/kl.avif" alt="KL Rahul" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Kl Rahul</h2>
-            <p class="player-role">Wicket-keeper</p>
-            <div class="team-info">
-                <span class="team-name">Capitals</span>
-            </div>
+            <h3 class="player-name">KL Rahul</h3>
+            <p class="player-role">Wicket‑keeper</p>
+            <div class="team-info"><span class="team-name">Capitals</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/sharma.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/sharma.avif" alt="Abhishek Sharma" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Abhishek Sharma</h2>
+            <h3 class="player-name">Abhishek Sharma</h3>
             <p class="player-role">All Rounder</p>
-            <div class="team-info">
-                <span class="team-name">SRH</span>
-            </div>
+            <div class="team-info"><span class="team-name">SRH</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Arsh.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Arsh.avif" alt="Arshdeep Singh" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Arshdeep Singh</h2>
+            <h3 class="player-name">Arshdeep Singh</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Punjab Kings</span>
-            </div>
+            <div class="team-info"><span class="team-name">Punjab Kings</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Boult.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Boult.avif" alt="Trent Boult" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Trent Boult</h2>
+            <h3 class="player-name">Trent Boult</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Indians</span>
-            </div>
+            <div class="team-info"><span class="team-name">Indians</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Brevis.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Brevis.avif" alt="Dewald Brevis" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Dewald Brevis</h2>
+            <h3 class="player-name">Dewald Brevis</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Super Kings</span>
-            </div>
+            <div class="team-info"><span class="team-name">Super Kings</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Buttler.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Buttler.avif" alt="Josh Butler" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Josh Butler</h2>
+            <h3 class="player-name">Josh Butler</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Titans</span>
-            </div>
+            <div class="team-info"><span class="team-name">Titans</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/gill.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/gill.avif" alt="Shubman Gill" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Shubman Gill</h2>
+            <h3 class="player-name">Shubman Gill</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Titans</span>
-            </div>
+            <div class="team-info"><span class="team-name">Titans</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/hardik.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/hardik.avif" alt="Hardik Pandya" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Hardik Pandya</h2>
+            <h3 class="player-name">Hardik Pandya</h3>
             <p class="player-role">All Rounder</p>
-            <div class="team-info">
-                <span class="team-name">Indians</span>
-            </div>
+            <div class="team-info"><span class="team-name">Indians</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Hazel.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Hazel.avif" alt="Josh Hazlewood" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Josh Hazlewood</h2>
+            <h3 class="player-name">Josh Hazlewood</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Royal Challengers</span>
-            </div>
+            <div class="team-info"><span class="team-name">Royal Challengers</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/ishanKishan.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/ishanKishan.avif" alt="Ishan Kishan" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Ishan Kishan</h2>
+            <h3 class="player-name">Ishan Kishan</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">SRH</span>
-            </div>
+            <div class="team-info"><span class="team-name">SRH</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Iyyer.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Iyyer.avif" alt="Shreyas Iyer" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Shreyas Iyer</h2>
+            <h3 class="player-name">Shreyas Iyer</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Punjab Kings</span>
-            </div>
+            <div class="team-info"><span class="team-name">Punjab Kings</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Jacob.avif" alt="Virat" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Jacob.avif" alt="Jacob Bethell" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Jacob Bethell</h2>
+            <h3 class="player-name">Jacob Bethell</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Royal Challengers</span>
-            </div>
+            <div class="team-info"><span class="team-name">Royal Challengers</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/janson.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/janson.avif" alt="Marco Jansen" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Marco Jansen</h2>
+            <h3 class="player-name">Marco Jansen</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Punjab Kings</span>
-            </div>
+            <div class="team-info"><span class="team-name">Punjab Kings</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/jessi.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/jessi.avif" alt="Jasprit Bumrah" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Jasprit Bumram</h2>
+            <h3 class="player-name">Jasprit Bumrah</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Indians</span>
-            </div>
+            <div class="team-info"><span class="team-name">Indians</span></div>
         </div>
     </div>
 
-     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/klassen.avif" alt="Sanju Samson" class="player-image">
+    <div class="player-card">
+        <img src="/IPL-2024-2025-2026/img/klassen.avif" alt="Henrik Klassen" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Henrik Klassen</h2>
-            <p class="player-role">Wicket-keeper</p>
-            <div class="team-info">
-                <span class="team-name">SRH</span>
-            </div>
+            <h3 class="player-name">Henrik Klassen</h3>
+            <p class="player-role">Wicket‑keeper</p>
+            <div class="team-info"><span class="team-name">SRH</span></div>
         </div>
     </div>
 
-     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/mich.webp" alt="Sanju Samson" class="player-image">
+    <div class="player-card">
+        <img src="/IPL-2024-2025-2026/img/mich.webp" alt="Mitchell Marsh" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Mitchell Marsh</h2>
+            <h3 class="player-name">Mitchell Marsh</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Super Giants</span>
-            </div>
+            <div class="team-info"><span class="team-name">Super Giants</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/noor.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/noor.avif" alt="Noor Ahmad" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Noor Ahmad</h2>
+            <h3 class="player-name">Noor Ahmad</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Super Kings</span>
-            </div>
+            <div class="team-info"><span class="team-name">Super Kings</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/omarzai.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/omarzai.avif" alt="Azmatullah Omarzai" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Azmatullah Omarzai</h2>
+            <h3 class="player-name">Azmatullah Omarzai</h3>
             <p class="player-role">All Rounder</p>
-            <div class="team-info">
-                <span class="team-name">Punjab Kings</span>
-            </div>
+            <div class="team-info"><span class="team-name">Punjab Kings</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Philips.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Philips.avif" alt="Glann Phillips" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Glann Phillips</h2>
+            <h3 class="player-name">Glann Phillips</h3>
             <p class="player-role">All Rounder</p>
-            <div class="team-info">
-                <span class="team-name">Giants</span>
-            </div>
+            <div class="team-info"><span class="team-name">Giants</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/pat.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/pat.avif" alt="Pat Cummins" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Pat Cummins</h2>
+            <h3 class="player-name">Pat Cummins</h3>
             <p class="player-role">All Rounder</p>
-            <div class="team-info">
-                <span class="team-name">SRH</span>
-            </div>
+            <div class="team-info"><span class="team-name">SRH</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Rajat.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Rajat.avif" alt="Rajat Patidar" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Rajat Patidar</h2>
+            <h3 class="player-name">Rajat Patidar</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Royal Challengers</span>
-            </div>
+            <div class="team-info"><span class="team-name">Royal Challengers</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/rashid.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/rashid.avif" alt="Rashid Khan" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Rashid Khan</h2>
+            <h3 class="player-name">Rashid Khan</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Giants</span>
-            </div>
+            <div class="team-info"><span class="team-name">Giants</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/Rinku.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/Rinku.avif" alt="Rinku Singh" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Rinku Singh</h2>
+            <h3 class="player-name">Rinku Singh</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Knight Riders</span>
-            </div>
+            <div class="team-info"><span class="team-name">Knight Riders</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/rohitsh.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/rohitsh.avif" alt="Rohit Sharma" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Rohit Sharma</h2>
+            <h3 class="player-name">Rohit Sharma</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Indians</span>
-            </div>
+            <div class="team-info"><span class="team-name">Indians</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/salt.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/salt.avif" alt="Philip Salt" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Philip Salt</h2>
+            <h3 class="player-name">Philip Salt</h3>
             <p class="player-role">Wicket Keeper</p>
-            <div class="team-info">
-                <span class="team-name">Royal Challengers</span>
-            </div>
+            <div class="team-info"><span class="team-name">Royal Challengers</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/santner.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/santner.avif" alt="Mitchell Santner" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Mitchell Santner</h2>
+            <h3 class="player-name">Mitchell Santner</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Indians</span>
-            </div>
+            <div class="team-info"><span class="team-name">Indians</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/siraj.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/siraj.avif" alt="Mohammed Siraj" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Mohammed Siraj</h2>
+            <h3 class="player-name">Mohammed Siraj</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Giants</span>
-            </div>
+            <div class="team-info"><span class="team-name">Giants</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/sky.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/sky.avif" alt="Suryakumar Yadav" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Suryakumar Yadav</h2>
+            <h3 class="player-name">Suryakumar Yadav</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Indians</span>
-            </div>
+            <div class="team-info"><span class="team-name">Indians</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/SN.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/SN.avif" alt="Sunil Narine" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Sunil Narine</h2>
+            <h3 class="player-name">Sunil Narine</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Knight Riders</span>
-            </div>
+            <div class="team-info"><span class="team-name">Knight Riders</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/starc.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/starc.avif" alt="Mitchell Starc" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Mitchell Starc</h2>
+            <h3 class="player-name">Mitchell Starc</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Capitals</span>
-            </div>
+            <div class="team-info"><span class="team-name">Capitals</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/StubsSA.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/StubsSA.avif" alt="Tristan Stubbs" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Tristan Stubbs</h2>
+            <h3 class="player-name">Tristan Stubbs</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">Capitals</span>
-            </div>
+            <div class="team-info"><span class="team-name">Capitals</span></div>
         </div>
     </div>
 
     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/trevis.avif" alt="Sanju Samson" class="player-image">
+        <img src="/IPL-2024-2025-2026/img/trevis.avif" alt="Travis Head" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Travis Head</h2>
+            <h3 class="player-name">Travis Head</h3>
             <p class="player-role">Batter</p>
-            <div class="team-info">
-                <span class="team-name">SRH</span>
-            </div>
+            <div class="team-info"><span class="team-name">SRH</span></div>
         </div>
     </div>
 
-     <div class="player-card">
-        <img src="/IPL-2024-2025-2026/img/VarunCh.avif" alt="Sanju Samson" class="player-image">
+    <div class="player-card">
+        <img src="/IPL-2024-2025-2026/img/VarunCh.avif" alt="Varun Chakaravarthy" class="player-image">
         <div class="player-info">
-            <h2 class="player-name">Varun Chakaravarthy</h2>
+            <h3 class="player-name">Varun Chakaravarthy</h3>
             <p class="player-role">Bowler</p>
-            <div class="team-info">
-                <span class="team-name">Knight Riders</span>
-            </div>
+            <div class="team-info"><span class="team-name">Knight Riders</span></div>
         </div>
     </div>
 
-    </main>
+</main>
 
 </body>
 </html>
