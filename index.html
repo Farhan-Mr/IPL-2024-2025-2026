@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,89 +18,160 @@
 <header>
 
 <div class="logo">
-<img src="/IPL-2024-2025-2026/img/PepsiIPL_LOGO.png">
-<h2>Pepsi IPL</h2>
+<img src="img/PepsiIPL_LOGO.png">
+<h2>IPL Dashboard</h2>
 </div>
 
-<nav>
+<div class="hamburger" id="menu">
+☰
+</div>
+
+<nav id="nav">
+
 <a href="#">Home</a>
-<a href="matches2026.html">Matches</a>
-<a href="ipl_Table2026.html">Points Table</a>
-<a href="stats2026.html">Stats</a>
-<a href="players.html">Players</a>
+<a href="#">Matches</a>
+<a href="#">Points Table</a>
+<a href="#">Players</a>
+
 </nav>
+
+<button id="themeToggle">🌙</button>
 
 </header>
 
 
 <section class="hero">
 
-<div class="hero-content">
+<h1 class="ipl-title">
+Indian Premier League
+</h1>
 
-<h1>Indian Premier League</h1>
+<p class="subtitle">
+Matches • Stats • Players • Teams
+</p>
 
-<p>Matches • Tables • Stats • Players</p><br><br>
+</section>
 
-<a href="ipl_table.html" class="btn">View 2025 Table</a>
+
+<section class="teams">
+
+<h2>IPL Teams</h2>
+
+<div class="team-grid">
+
+<div class="team-card">CSK</div>
+<div class="team-card">MI</div>
+<div class="team-card">RCB</div>
+<div class="team-card">KKR</div>
+<div class="team-card">SRH</div>
+<div class="team-card">GT</div>
+<div class="team-card">RR</div>
+<div class="team-card">DC</div>
 
 </div>
 
 </section>
 
 
+<section class="table">
 
-<section class="cards">
+<h2>Points Table</h2>
 
-<div class="card">
-<h3>📊 Points Table</h3>
-<p>View IPL standings for all seasons</p>
-<a href="ipl_table.html">Open</a>
-</div>
+<table>
 
-<div class="card">
-<h3>🏏 Matches</h3>
-<p>See match results and schedules</p>
-<a href="match2025.html">Open</a>
-</div>
+<tr>
+<th>Team</th>
+<th>Matches</th>
+<th>Points</th>
+</tr>
 
-<div class="card">
-<h3>📈 Stats</h3>
-<p>Player stats and records</p>
-<a href="stats2025.html">Open</a>
-</div>
+<tr>
+<td>CSK</td>
+<td>14</td>
+<td>18</td>
+</tr>
 
-<div class="card">
-<h3>👥 Players</h3>
-<p>All team players information</p>
-<a href="players.html">Open</a>
-</div>
+<tr>
+<td>MI</td>
+<td>14</td>
+<td>16</td>
+</tr>
 
-</section>
+<tr>
+<td>RCB</td>
+<td>14</td>
+<td>14</td>
+</tr>
 
+<tr>
+<td>KKR</td>
+<td>14</td>
+<td>12</td>
+</tr>
 
-
-<section class="seasons">
-
-<h2>Explore Seasons</h2>
-
-<div class="season-links">
-
-<a href="ipl2024.html">IPL 2024</a>
-<a href="ipl_table.html">IPL 2025</a>
-<a href="ipl_Table2026.html">IPL 2026</a>
-
-</div>
+</table>
 
 </section>
 
+
+<section class="players">
+
+<h2>Star Players</h2>
+
+<div class="player-grid">
+
+<div class="player-card">
+<h3>Virat Kohli</h3>
+<p>RCB</p>
+</div>
+
+<div class="player-card">
+<h3>MS Dhoni</h3>
+<p>CSK</p>
+</div>
+
+<div class="player-card">
+<h3>Rohit Sharma</h3>
+<p>MI</p>
+</div>
+
+<div class="player-card">
+<h3>Shubman Gill</h3>
+<p>GT</p>
+</div>
+
+</div>
+
+</section>
 
 
 <footer>
 
-<p>© 2026 IPL Project | Made by Farhan Farhat</p>
+<p>© 2026 IPL Dashboard</p>
 
 </footer>
 
+
+<script>
+
+const menu = document.getElementById("menu")
+const nav = document.getElementById("nav")
+
+menu.onclick = () => {
+
+nav.classList.toggle("show")
+
+}
+
+const toggle = document.getElementById("themeToggle")
+
+toggle.onclick = () => {
+
+document.body.classList.toggle("dark")
+
+}
+
+</script>
 
 </body>
 </html>

@@ -5,306 +5,190 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-/* BODY */
-
 body{
 
-background: linear-gradient(135deg,#282968,#2561AE);
+background:#1e1e2f;
 color:white;
-overflow-x:hidden;
 
 }
-
 
 /* HEADER */
 
 header{
 
-width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:15px 60px;
+padding:15px 5%;
 
-background:#282968;
-
-position:fixed;
-top:0;
-z-index:1000;
-
-border-bottom:3px solid #FAAD1B;
+background:#111;
 
 }
-
-
-/* LOGO */
 
 .logo{
 
 display:flex;
-align-items:center;
 gap:10px;
+align-items:center;
 
 }
 
 .logo img{
 
-width:45px;
+width:40px;
 
 }
 
+nav{
 
-/* NAVBAR */
+display:flex;
+gap:20px;
+
+}
 
 nav a{
 
 color:white;
 text-decoration:none;
 
-margin-left:25px;
+}
 
-font-weight:500;
+.hamburger{
 
-position:relative;
-
-transition:0.3s;
+display:none;
+font-size:28px;
+cursor:pointer;
 
 }
 
-nav a:hover{
+#themeToggle{
 
-color:#FAAD1B;
-
-}
-
-
-/* NAVBAR ANIMATION */
-
-nav a::after{
-
-content:"";
-position:absolute;
-
-width:0%;
-
-height:2px;
-
-background:#D71921;
-
-left:0;
-bottom:-5px;
-
-transition:0.3s;
+padding:8px 12px;
+cursor:pointer;
 
 }
 
-nav a:hover::after{
-
-width:100%;
-
-}
-
-
-/* HERO SECTION */
+/* HERO */
 
 .hero{
 
-height:90vh;
-
-background: linear-gradient(135deg,#282968,#2561AE);
-
-display:flex;
-align-items:center;
-justify-content:center;
 text-align:center;
-
-padding-top:80px;
-
-animation:fadeIn 1.5s ease;
+padding:60px 20px;
 
 }
 
 .hero h1{
 
-font-size:60px;
-
-color:#FAAD1B;
-
-letter-spacing:2px;
-
-animation:float 4s infinite ease-in-out;
+font-size:3rem;
+color:#ffa500;
 
 }
 
-.hero p{
+/* TEAM CARDS */
 
-margin:15px;
-font-size:20px;
+.teams{
 
-}
-
-
-/* BUTTON */
-
-.btn{
-
-padding:12px 30px;
-
-background:linear-gradient(45deg,#FAAD1B,#D71921);
-
-border-radius:30px;
-
-color:white;
-
-font-weight:bold;
-
-text-decoration:none;
-
-transition:0.4s;
+padding:50px 5%;
+text-align:center;
 
 }
 
-.btn:hover{
-
-transform:scale(1.1);
-
-box-shadow:0 0 20px #D71921;
-
-}
-
-
-/* CARDS */
-
-.cards{
-
-padding:80px 40px;
+.team-grid{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 
-gap:30px;
-
-max-width:1100px;
-
-margin:auto;
+gap:20px;
 
 }
 
+.team-card{
 
-/* CARD STYLE */
+background:#282968;
 
-.card{
+padding:40px;
 
-background:rgba(255,255,255,0.08);
+border-radius:12px;
 
-backdrop-filter:blur(10px);
+transition:0.3s;
+
+font-weight:bold;
+
+}
+
+.team-card:hover{
+
+transform:scale(1.1);
+background:#ffa500;
+
+}
+
+/* TABLE */
+
+.table{
+
+padding:50px 5%;
+text-align:center;
+
+}
+
+table{
+
+width:100%;
+max-width:600px;
+margin:auto;
+
+border-collapse:collapse;
+
+}
+
+th,td{
+
+padding:10px;
+
+border-bottom:1px solid gray;
+
+}
+
+/* PLAYER CARDS */
+
+.players{
+
+padding:50px 5%;
+text-align:center;
+
+}
+
+.player-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:20px;
+
+}
+
+.player-card{
+
+background:#333;
 
 padding:30px;
 
-border-radius:15px;
+border-radius:12px;
 
-text-align:center;
-
-transition:0.4s;
-
-border:1px solid rgba(255,255,255,0.15);
+transition:0.3s;
 
 }
 
+.player-card:hover{
 
-/* CARD HOVER EFFECT */
-
-.card:hover{
-
-transform:translateY(-15px) scale(1.05);
-
-box-shadow:0 15px 40px rgba(0,0,0,0.6);
-
-border:1px solid #FAAD1B;
+transform:translateY(-10px);
+background:#ffa500;
 
 }
-
-
-.card h3{
-
-color:#FAAD1B;
-
-margin-bottom:10px;
-
-}
-
-
-.card a{
-
-display:inline-block;
-
-margin-top:15px;
-
-text-decoration:none;
-
-color:#FF3B3B;
-
-font-weight:bold;
-
-}
-
-
-/* SEASONS SECTION */
-
-.seasons{
-
-text-align:center;
-
-padding:70px 20px;
-
-}
-
-.seasons h2{
-
-margin-bottom:20px;
-
-font-size:32px;
-
-color:#FAAD1B;
-
-}
-
-
-/* SEASON BUTTONS */
-
-.season-links a{
-
-margin:10px;
-
-padding:12px 25px;
-
-background:#2561AE;
-
-color:white;
-
-border-radius:30px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-transition:0.4s;
-
-}
-
-
-.season-links a:hover{
-
-transform:scale(1.1);
-
-background:#D71921;
-
-box-shadow:0 0 20px #D71921;
-
-}
-
 
 /* FOOTER */
 
@@ -314,53 +198,70 @@ text-align:center;
 
 padding:20px;
 
-background:#282968;
-
-margin-top:40px;
-
-border-top:2px solid #FAAD1B;
+background:#111;
 
 }
 
+/* DARK MODE */
 
-/* ANIMATIONS */
+.dark{
 
-@keyframes fadeIn{
-
-0%{
-
-opacity:0;
-transform:translateY(40px);
+background:white;
+color:black;
 
 }
 
-100%{
+.dark header{
 
-opacity:1;
-transform:translateY(0);
-
-}
+background:#eee;
 
 }
 
+.dark .team-card{
 
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
+background:#ddd;
 
 }
 
-50%{
+.dark .player-card{
 
-transform:translateY(-10px);
+background:#ddd;
 
 }
 
-100%{
+/* MOBILE */
 
-transform:translateY(0);
+@media(max-width:768px){
+
+nav{
+
+position:absolute;
+
+top:70px;
+
+right:0;
+
+background:#111;
+
+flex-direction:column;
+
+width:100%;
+
+display:none;
+
+text-align:center;
+
+}
+
+nav.show{
+
+display:flex;
+
+}
+
+.hamburger{
+
+display:block;
 
 }
 
