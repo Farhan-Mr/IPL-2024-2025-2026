@@ -8,9 +8,135 @@
 <title>Pepsi IPL</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+<style>
+/* ------------------- RESPONSIVE STYLES ------------------- */
+
+/* General Grid Fixes */
+.team-grid, .player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 5%;
+  background: #1f2245;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  width: 45px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 500;
+}
+nav a.active {
+  color: #ffa500;
+}
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  padding: 60px 5%;
+  text-align: center;
+}
+
+/* ----------------- MEDIA QUERIES ----------------- */
+
+/* Tablet */
+@media(max-width:1024px){
+  .team-grid, .player-grid {
+    gap: 12px;
+  }
+}
+
+/* Mobile */
+@media(max-width:768px){
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    background: #1f2245;
+    padding: 15px;
+    z-index: 10;
+  }
+  nav.show {
+    display: flex;
+  }
+  nav a {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1, .hero p {
+    font-size: 1.2rem;
+  }
+
+  .team-grid, .player-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+/* Small Phones */
+@media(max-width:480px){
+  .logo img {
+    width: 35px;
+  }
+  nav a {
+    font-size: 14px;
+  }
+  .hero h1 {
+    font-size: 1rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .team-card, .player-card {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -37,22 +163,14 @@
 
 </header>
 
-
 <section class="hero slideIn">
-
   <h1 class="ipl-title">Indian Premier League</h1>
-
   <p class="subtitle">Matches • Stats • Players • Teams</p>
-
 </section>
 
-
 <section class="teams">
-
   <h2 class="fadeInUp">IPL Teams</h2>
-
   <div class="team-grid">
-
     <div class="team-card popIn">CSK</div>
     <div class="team-card popIn">MI</div>
     <div class="team-card popIn">RCB</div>
@@ -61,50 +179,36 @@
     <div class="team-card popIn">GT</div>
     <div class="team-card popIn">RR</div>
     <div class="team-card popIn">DC</div>
-
   </div>
-
 </section>
 
-
 <section class="players">
-
   <h2 class="fadeInUp">Star Players</h2>
-
   <div class="player-grid">
-
     <div class="player-card hoverGrow">
       <h3>Virat Kohli</h3>
       <p>RCB</p>
     </div>
-
     <div class="player-card hoverGrow">
       <h3>MS Dhoni</h3>
       <p>CSK</p>
     </div>
-
     <div class="player-card hoverGrow">
       <h3>Rohit Sharma</h3>
       <p>MI</p>
     </div>
-
     <div class="player-card hoverGrow">
       <h3>Shubman Gill</h3>
       <p>GT</p>
     </div>
-
   </div>
-
 </section>
-
 
 <footer class="fadeInUp">
   <p>© 2026 IPL Dashboard</p>
 </footer>
 
-
 <script>
-
 const menu = document.getElementById("menu")
 const nav = document.getElementById("nav")
 
@@ -113,11 +217,9 @@ menu.onclick = () => {
 }
 
 const toggle = document.getElementById("themeToggle")
-
 toggle.onclick = () => {
   document.body.classList.toggle("dark")
 }
-
 </script>
 
 </body>
