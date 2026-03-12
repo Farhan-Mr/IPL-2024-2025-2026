@@ -11,16 +11,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ------------------- RESPONSIVE STYLES ------------------- */
 
-/* General Grid Fixes */
 .team-grid, .player-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 15px;
 }
 
-/* Header */
 header {
   display: flex;
   align-items: center;
@@ -71,17 +68,14 @@ nav a.active {
   text-align: center;
 }
 
-/* ----------------- MEDIA QUERIES ----------------- */
 
-/* Tablet */
 @media(max-width:1024px){
   .team-grid, .player-grid {
     gap: 12px;
   }
 }
 
-/* Mobile */
-@media(max-width:768px){
+@media(max-width:600px){
   header {
     flex-direction: row;
     justify-content: space-between;
@@ -117,7 +111,6 @@ nav a.active {
   }
 }
 
-/* Small Phones */
 @media(max-width:480px){
   .logo img {
     width: 35px;
@@ -136,6 +129,45 @@ nav a.active {
     padding: 8px;
   }
 }
+
+#MI_CARD:hover
+{
+  background-color: #004B8D;
+  color: #FFCD32;
+}
+
+#RCB_CARD:hover
+{
+  background-color: #E63329;
+  color: #252829;
+}
+
+#KKR_CARD:hover
+{
+  background-color: #3A225D;
+  color: #F7D54E;
+}
+#SRH_card:hover{
+  background-color: #EE7429;
+  color:  #DC0032;
+}
+
+#GT_CARD:hover
+{
+  background-color: #1B2133;
+  color: #DBBE6E;
+}
+#RR_card:hover
+{
+  background-color: #074EA2;
+  color: #C3A11F;
+}
+#DC_card:hover
+{
+ background-color: #2561AE;
+ color: #D71921;
+}
+
 </style>
 </head>
 
@@ -159,7 +191,6 @@ nav a.active {
     <a href="players.html">Players</a>
   </nav>
 
-  <button id="themeToggle">🌙</button>
 
 </header>
 
@@ -169,16 +200,16 @@ nav a.active {
 </section>
 
 <section class="teams">
-  <h2 class="fadeInUp">IPL Teams</h2>
+  <h2 class="fadeInUp">IPL Teams</h2><br>
   <div class="team-grid">
-    <div class="team-card popIn">CSK</div>
-    <div class="team-card popIn">MI</div>
-    <div class="team-card popIn">RCB</div>
-    <div class="team-card popIn">KKR</div>
-    <div class="team-card popIn">SRH</div>
-    <div class="team-card popIn">GT</div>
-    <div class="team-card popIn">RR</div>
-    <div class="team-card popIn">DC</div>
+    <div class="team-card popIn" id="CSK_CARD">CSK</div>
+    <div class="team-card popIn" id="MI_CARD">MI</div>
+    <div class="team-card popIn" id="RCB_CARD">RCB</div>
+    <div class="team-card popIn" id="KKR_CARD">KKR</div>
+    <div class="team-card popIn" id="SRH_card">SRH</div>
+    <div class="team-card popIn" id="GT_CARD">GT</div>
+    <div class="team-card popIn" id="RR_card">RR</div>
+    <div class="team-card popIn" id="DC_card">DC</div>
   </div>
 </section>
 
@@ -208,18 +239,7 @@ nav a.active {
   <p>© 2026 IPL Dashboard</p>
 </footer>
 
-<script>
-const menu = document.getElementById("menu")
-const nav = document.getElementById("nav")
 
-menu.onclick = () => {
-  nav.classList.toggle("show")
-}
-
-const toggle = document.getElementById("themeToggle")
-toggle.onclick = () => {
-  document.body.classList.toggle("dark")
-}
 </script>
 
 </body>
