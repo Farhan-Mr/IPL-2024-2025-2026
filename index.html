@@ -7,238 +7,266 @@
 
 <title>Pepsi IPL</title>
 
-<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-.team-grid, .player-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 5%;
-  background: #1f2245;
-  flex-wrap: wrap;
+body{
+background:#14162e;
+color:white;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.logo img {
-  width: 45px;
+/* HEADER */
+
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 5%;
+background:#1f2245;
+position:relative;
 }
 
-nav {
-  display: flex;
-  gap: 20px;
-}
-nav a {
-  text-decoration: none;
-  color: #ccc;
-  font-weight: 500;
-}
-nav a.active {
-  color: #ffa500;
-}
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-#themeToggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
+.logo img{
+width:40px;
 }
 
-/* Hero */
-.hero {
-  padding: 60px 5%;
-  text-align: center;
+nav{
+display:flex;
+gap:20px;
 }
 
-
-@media(max-width:1024px){
-  .team-grid, .player-grid {
-    gap: 12px;
-  }
+nav a{
+text-decoration:none;
+color:#ccc;
+font-weight:500;
 }
 
-@media(max-width:600px){
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  nav {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    display: none;
-    background: #1f2245;
-    padding: 15px;
-    z-index: 10;
-  }
-  nav.show {
-    display: flex;
-  }
-  nav a {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .hamburger {
-    display: block;
-  }
-
-  .hero h1, .hero p {
-    font-size: 1.2rem;
-  }
-
-  .team-grid, .player-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
+nav a:hover{
+color:#ffa500;
 }
 
-@media(max-width:480px){
-  .logo img {
-    width: 35px;
-  }
-  nav a {
-    font-size: 14px;
-  }
-  .hero h1 {
-    font-size: 1rem;
-  }
-  .hero p {
-    font-size: 0.9rem;
-  }
-  .team-card, .player-card {
-    font-size: 0.85rem;
-    padding: 8px;
-  }
+.hamburger{
+display:none;
+font-size:28px;
+cursor:pointer;
 }
 
-#MI_CARD:hover
-{
-  background-color: #004B8D;
-  color: #FFCD32;
+/* HERO */
+
+.hero{
+text-align:center;
+padding:60px 5%;
 }
 
-#RCB_CARD:hover
-{
-  background-color: #E63329;
-  color: #252829;
+.ipl-title{
+color:#ffa500;
+font-size:28px;
 }
 
-#KKR_CARD:hover
-{
-  background-color: #3A225D;
-  color: #F7D54E;
-}
-#SRH_card:hover{
-  background-color: #EE7429;
-  color:  #DC0032;
+.subtitle{
+color:#ccc;
+margin-top:5px;
 }
 
-#GT_CARD:hover
-{
-  background-color: #1B2133;
-  color: #DBBE6E;
+/* TEAMS */
+
+.teams{
+padding:30px 5%;
+text-align:center;
 }
-#RR_card:hover
-{
-  background-color: #074EA2;
-  color: #C3A11F;
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:15px;
+margin-top:20px;
 }
-#DC_card:hover
-{
- background-color: #2561AE;
- color: #D71921;
+
+.team-card{
+background:#2b2f66;
+padding:15px;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.team-card:hover{
+transform:scale(1.05);
+}
+
+/* PLAYERS */
+
+.players{
+padding:40px 5%;
+text-align:center;
+}
+
+.player-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.player-card{
+background:#333;
+padding:20px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.player-card:hover{
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#1f2245;
+flex-direction:column;
+display:none;
+padding:15px;
+}
+
+nav.show{
+display:flex;
+}
+
+nav a{
+padding:10px;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.hamburger{
+display:block;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<header class="fadeInDown">
+<header>
 
-  <div class="logo">
-    <img src="/IPL-2024-2025-2026/img/ipl-logo.png">
-    <h2>Pepsi IPL</h2>
-  </div>
+<div class="logo">
+<img src="https://upload.wikimedia.org/wikipedia/en/2/2e/Indian_Premier_League_Logo.svg">
+<h2>Pepsi IPL</h2>
+</div>
 
-  <div class="hamburger" id="menu">
-    ☰
-  </div>
+<div class="hamburger" id="menu">
+☰
+</div>
 
-  <nav id="nav">
-    <a href="index.html">Home</a>
-    <a href="matches2026.html">Matches</a>
-    <a href="ipl_Table2026.html">Points Table</a>
-    <a href="players.html">Players</a>
-  </nav>
-
+<nav id="nav">
+<a href="#">Home</a>
+<a href="#">Matches</a>
+<a href="#">Points Table</a>
+<a href="#">Players</a>
+</nav>
 
 </header>
 
-<section class="hero slideIn">
-  <h1 class="ipl-title">Indian Premier League</h1>
-  <p class="subtitle">Matches • Stats • Players • Teams</p>
+<section class="hero">
+
+<h1 class="ipl-title">Indian Premier League</h1>
+<p class="subtitle">Matches • Stats • Players • Teams</p>
+
 </section>
 
 <section class="teams">
-  <h2 class="fadeInUp">IPL Teams</h2><br>
-  <div class="team-grid">
-    <div class="team-card popIn" id="CSK_CARD">CSK</div>
-    <div class="team-card popIn" id="MI_CARD">MI</div>
-    <div class="team-card popIn" id="RCB_CARD">RCB</div>
-    <div class="team-card popIn" id="KKR_CARD">KKR</div>
-    <div class="team-card popIn" id="SRH_card">SRH</div>
-    <div class="team-card popIn" id="GT_CARD">GT</div>
-    <div class="team-card popIn" id="RR_card">RR</div>
-    <div class="team-card popIn" id="DC_card">DC</div>
-  </div>
+
+<h2>IPL Teams</h2>
+
+<div class="team-grid">
+
+<div class="team-card">CSK</div>
+<div class="team-card">MI</div>
+<div class="team-card">RCB</div>
+<div class="team-card">KKR</div>
+<div class="team-card">SRH</div>
+<div class="team-card">GT</div>
+<div class="team-card">RR</div>
+<div class="team-card">DC</div>
+
+</div>
+
 </section>
 
 <section class="players">
-  <h2 class="fadeInUp">Star Players</h2>
-  <div class="player-grid">
-    <div class="player-card hoverGrow">
-      <h3>Virat Kohli</h3>
-      <p>RCB</p>
-    </div>
-    <div class="player-card hoverGrow">
-      <h3>MS Dhoni</h3>
-      <p>CSK</p>
-    </div>
-    <div class="player-card hoverGrow">
-      <h3>Rohit Sharma</h3>
-      <p>MI</p>
-    </div>
-    <div class="player-card hoverGrow">
-      <h3>Shubman Gill</h3>
-      <p>GT</p>
-    </div>
-  </div>
+
+<h2>Star Players</h2>
+
+<div class="player-grid">
+
+<div class="player-card">
+<h3>Virat Kohli</h3>
+<p>RCB</p>
+</div>
+
+<div class="player-card">
+<h3>MS Dhoni</h3>
+<p>CSK</p>
+</div>
+
+<div class="player-card">
+<h3>Rohit Sharma</h3>
+<p>MI</p>
+</div>
+
+<div class="player-card">
+<h3>Shubman Gill</h3>
+<p>GT</p>
+</div>
+
+</div>
+
 </section>
 
-<footer class="fadeInUp">
-  <p>© 2026 IPL Dashboard</p>
+<footer>
+
+<p>© 2026 IPL Dashboard</p>
+
 </footer>
 
+<script>
+
+const menu=document.getElementById("menu");
+const nav=document.getElementById("nav");
+
+menu.addEventListener("click",function(){
+nav.classList.toggle("show");
+});
 
 </script>
 
