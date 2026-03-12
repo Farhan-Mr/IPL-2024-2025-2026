@@ -11,9 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ------------------- RESPONSIVE STYLES ------------------- */
 
-/* General Grid Fixes */
 .team-grid, .player-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -35,7 +33,7 @@ header {
   gap: 10px;
 }
 .logo img {
-  width: 45px;
+  width: 70px;
 }
 
 nav {
@@ -169,7 +167,97 @@ nav a.active {
  background-color: #2561AE;
  color: #D71921;
 }
+#PBKS_card:hover
+{
+  background-color: #A7A9AC;
+  color: #ED1D24;
+}
+#LSG_card:hover
+{
+  background-color: #0057E2;
+  color: #FFD700;
+}
 
+/* GRID FOR CARDS */
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px 5%;
+  justify-items: center;
+}
+
+/* CARD PERSPECTIVE CONTAINER */
+.card-container {
+  perspective: 1500px;
+}
+
+/* FLIP CARD */
+.card {
+  width: 220px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+/* FLIP ON HOVER */
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+/* SIDES COMMON STYLES */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* FRONT */
+.card-front {
+  background-size: cover;
+  background-position: center;
+}
+
+/* BACK */
+.card-back {
+  background: #fff;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* BACK IMAGE */
+.card-back img {
+  width: 80px;
+  margin-bottom: 8px;
+}
+
+/* BACK TEXT */
+.card-back h6 {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  color: #111;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .card { width: 180px; height: 240px; }
+}
+
+@media (max-width: 300px) {
+  .cards-wrapper { grid-template-columns: 1fr; }
+  .card { width: 80%; margin: auto; }
+}
 </style>
 </head>
 
@@ -178,7 +266,7 @@ nav a.active {
 <header class="fadeInDown">
 
   <div class="logo">
-    <img src="/IPL-2024-2025-2026/img/ipl-logo.png">
+    <img src="https://documents.iplt20.com//ipl/assets/images/ipl-logo-new-old.png">
     <h2>Pepsi IPL</h2>
   </div>
 
@@ -213,8 +301,94 @@ nav a.active {
     <div class="team-card popIn" id="GT_CARD">GT</div>
     <div class="team-card popIn" id="RR_card">RR</div>
     <div class="team-card popIn" id="DC_card">DC</div>
+    <div class="team-card popIn" id="LSG_card">LSG</div>
+    <div class="team-card popIn" id="PBKS_card">PBKS</div>
+
   </div>
 </section>
+
+
+<section class="cards-wrapper">
+
+  <!-- CSK -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front" style="background-image:url('https://documents.iplt20.com/ipl/CSK/logos/Logooutline/CSKoutline.png');"></div>
+      <div class="card-back">
+        <img src="/IPL-2024-2025-2026/img/throphy.jpg" alt="trophy">
+        <h6>Chennai Super Kings<br>2010 | 2011 | 2018 | 2021 | 2023</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- MI -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front" style="background-image:url('https://documents.iplt20.com/ipl/MI/Logos/Logooutline/MIoutline.png');"></div>
+      <div class="card-back">
+        <img src="/IPL-2024-2025-2026/img/throphy.jpg" alt="trophy">
+        <h6>Mumbai Indians<br>2013 | 2015 | 2017 | 2019 | 2020</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- KKR -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front" style="background-image:url('https://documents.iplt20.com/ipl/KKR/Logos/Logooutline/KKRoutline.png');"></div>
+      <div class="card-back">
+        <img src="/IPL-2024-2025-2026/img/throphy.jpg" alt="trophy">
+        <h6>Kolkata Knight Riders<br>2014 | 2016 | 2024</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- GT -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front" style="background-image:url('https://documents.iplt20.com/ipl/GT/Logos/Logooutline/GToutline.png');"></div>
+      <div class="card-back">
+        <img src="/IPL-2024-2025-2026/img/throphy.jpg" alt="trophy">
+        <h6>Gujrat Titans<br>2022</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- RR -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front" style="background-image:url('https://documents.iplt20.com/ipl/RR/Logos/Logooutline/RRoutline.png');"></div>
+      <div class="card-back">
+        <img src="/IPL-2024-2025-2026/img/throphy.jpg" alt="trophy">
+        <h6>Rajasthan Royals<br>2008</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- RCB -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front" style="background-image:url('https://documents.iplt20.com/ipl/RCB/Logos/Logooutline/RCBoutline.png');"></div>
+      <div class="card-back">
+        <img src="/IPL-2024-2025-2026/img/throphy.jpg" alt="trophy">
+        <h6>Royal Challengers Bengaluru<br>2025</h6>
+      </div>
+    </div>
+  </div>
+
+  <!-- SRH -->
+  <div class="card-container">
+    <div class="card">
+      <div class="card-front" style="background-image:url('https://documents.iplt20.com/ipl/SRH/Logos/Logooutline/SRHoutline.png');"></div>
+      <div class="card-back">
+        <img src="/IPL-2024-2025-2026/img/throphy.jpg" alt="trophy">
+        <h6>Royal Challengers Bengaluru<br>2016</h6>
+      </div>
+    </div>
+  </div>
+
+</section>
+
 
 <section class="players">
   <h2 class="fadeInUp">Star Players</h2>
@@ -237,6 +411,7 @@ nav a.active {
     </div>
   </div>
 </section>
+
 
 <footer class="fadeInUp">
   <p>© 2026 IPL Dashboard</p>
